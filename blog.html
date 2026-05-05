@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Uplift + Ignite Coaching and Consulting</title>
+<meta name="description" content="Weekly leadership insights from Stacy Balzer — practical thinking on team performance, communication, coaching, and automotive service operations.">
+<meta name="author" content="Stacy Balzer">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --purple-900: #2d1b4e;
+    --purple-800: #3f2468;
+    --purple-700: #5b3494;
+    --purple-600: #7a4fb8;
+    --purple-500: #9b6fd4;
+    --purple-100: #ede4fa;
+    --purple-50: #f7f3fd;
+    --cream: #faf7f2;
+    --ink: #1a1325;
+    --muted: #5a4d6b;
+    --border: #e4dcef;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: var(--purple-700); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 14px 0;
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--purple-800);
+    letter-spacing: -0.02em;
+  }
+  .brand span { color: var(--purple-600); font-weight: 400; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { color: var(--ink); font-size: 14px; font-weight: 500; }
+  .nav-links a:hover { color: var(--purple-700); text-decoration: none; }
+  .nav-links a.active { color: var(--purple-700); }
+  .nav-cta {
+    background: var(--purple-700);
+    color: white !important;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 14px; font-weight: 600;
+    transition: background 0.15s;
+  }
+  .nav-cta:hover { background: var(--purple-800); text-decoration: none !important; }
+  .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 6px; font-size: 20px; color: var(--ink); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      background: var(--cream);
+      padding: 18px 24px; gap: 16px;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .mobile-menu-btn { display: block; }
+  }
+
+  /* PAGE HERO */
+  .page-hero {
+    padding: 64px 0 48px;
+    background:
+      radial-gradient(ellipse at top right, rgba(155, 111, 212, 0.15), transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(91, 52, 148, 0.08), transparent 60%),
+      var(--cream);
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    font-size: 13px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--purple-700); margin-bottom: 18px;
+    display: block;
+  }
+  .page-hero h1 { font-size: clamp(32px, 4vw, 50px); margin-bottom: 16px; max-width: 700px; }
+  .page-hero .lead { font-size: 18px; color: var(--muted); max-width: 600px; margin-bottom: 28px; }
+  .linkedin-follow {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #0077b5; color: white;
+    padding: 11px 20px; border-radius: 8px;
+    font-weight: 600; font-size: 14px;
+    transition: background 0.15s;
+  }
+  .linkedin-follow:hover { background: #005f93; text-decoration: none; }
+  .linkedin-follow svg { width: 18px; height: 18px; fill: white; flex-shrink: 0; }
+
+  /* FEED LAYOUT */
+  .blog-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 48px;
+    padding: 64px 0;
+    align-items: start;
+  }
+
+  /* POST CARDS */
+  .post-list { display: flex; flex-direction: column; gap: 28px; }
+
+  .post-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(91, 52, 148, 0.10);
+    border-color: var(--purple-500);
+  }
+  .post-meta {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 14px;
+  }
+  .post-tag {
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--purple-700);
+    background: var(--purple-100);
+    padding: 3px 10px; border-radius: 20px;
+  }
+  .post-date { font-size: 13px; color: var(--muted); }
+  .post-card h2 { font-size: 22px; margin-bottom: 10px; color: var(--ink); }
+  .post-card p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 18px; }
+  .post-footer { display: flex; align-items: center; justify-content: space-between; }
+  .read-on-li {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 14px; font-weight: 600; color: var(--purple-700);
+  }
+  .read-on-li:hover { text-decoration: underline; }
+  .read-on-li svg { width: 16px; height: 16px; fill: #0077b5; }
+  .post-engage { font-size: 13px; color: var(--muted); }
+
+  /* SIDEBAR */
+  .sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+  .sidebar-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .sidebar-card h3 {
+    font-size: 16px; margin-bottom: 14px; color: var(--ink);
+    padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  }
+
+  .topic-list { list-style: none; }
+  .topic-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .topic-list li:last-child { border-bottom: none; }
+  .topic-list a { color: var(--ink); font-weight: 500; }
+  .topic-list a:hover { color: var(--purple-700); text-decoration: none; }
+  .topic-count {
+    font-size: 12px; color: var(--muted);
+    background: var(--purple-50); border-radius: 20px;
+    padding: 2px 8px;
+  }
+
+  .about-sidebar { text-align: center; }
+  .about-sidebar .avatar {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple-500), var(--purple-800));
+    margin: 0 auto 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-size: 28px; color: white; font-weight: 700;
+  }
+  .about-sidebar p { font-size: 14px; color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
+  .about-sidebar .linkedin-follow { width: 100%; justify-content: center; }
+
+  .notice-card {
+    background: var(--purple-50);
+    border: 1px solid var(--purple-100);
+    border-radius: 12px; padding: 24px; text-align: center;
+  }
+  .notice-card p { font-size: 14px; color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
+  .notice-card .linkedin-follow { width: 100%; justify-content: center; }
+
+  @media (max-width: 900px) {
+    .blog-layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--purple-900); color: var(--purple-100);
+    padding: 40px 0 24px; font-size: 14px;
+    border-top: 1px solid var(--border);
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 20px; flex-wrap: wrap;
+  }
+  footer .brand { color: white; }
+  footer .brand span { color: var(--purple-500); }
+  .footer-social a { color: var(--purple-100); margin-left: 18px; font-weight: 500; }
+  .footer-social a:hover { color: white; text-decoration: none; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 28px; padding-top: 20px;
+    text-align: center; opacity: 0.7; font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">Uplift<span>+</span>Ignite</a>
+    <button class="mobile-menu-btn" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#services">Services</a>
+      <a href="dealership.html">Dealerships</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="index.html#contact" class="nav-cta">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Blog &amp; Insights</span>
+    <h1>Weekly thinking on leadership, teams, and what actually works.</h1>
+    <p class="lead">Every week I share what I'm seeing in the field — the patterns, the breakthroughs, and the hard lessons that leaders and teams keep running into. Read it here, or follow along on LinkedIn.</p>
+    <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="linkedin-follow">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      Follow on LinkedIn
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-layout">
+
+    <!-- POST FEED -->
+    <main class="post-list">
+
+      <div class="post-card">
+        <div class="post-meta">
+          <span class="post-tag">Leadership</span>
+          <span class="post-date">April 28, 2025</span>
+        </div>
+        <h2>The One Question That Changes Every Team Meeting</h2>
+        <p>Most leaders walk into meetings with an agenda. The best leaders walk in with a question. After thirty years of running global service operations, I've found that a single well-placed question does more to unlock team performance than any slide deck or status update ever could. Here's the one I come back to again and again — and why it works.</p>
+        <div class="post-footer">
+          <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="read-on-li">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Read on LinkedIn
+          </a>
+          <span class="post-engage">247 reactions · 38 comments</span>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-meta">
+          <span class="post-tag">Team Communication</span>
+          <span class="post-date">April 21, 2025</span>
+        </div>
+        <h2>When Silence in a Meeting Is Actually a Red Flag</h2>
+        <p>A room full of nodding heads isn't alignment — it might be the opposite. I've walked out of dozens of meetings thinking we had consensus, only to see the cracks show up the moment execution started. If your team is too quiet, here's what's probably going on and how to fix it before it costs you.</p>
+        <div class="post-footer">
+          <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="read-on-li">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Read on LinkedIn
+          </a>
+          <span class="post-engage">312 reactions · 54 comments</span>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-meta">
+          <span class="post-tag">Dealership Ops</span>
+          <span class="post-date">April 14, 2025</span>
+        </div>
+        <h2>Your Service Advisors Are Leaving Money on the Table — Here's Why</h2>
+        <p>Fixed ops is the most consistently profitable part of your dealership, yet most service advisors are operating at 60–70% of their potential throughput. It's rarely a motivation problem. After running service operations across thousands of North American dealerships, I know exactly where the drag comes from — and it's usually upstream of the advisor.</p>
+        <div class="post-footer">
+          <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="read-on-li">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Read on LinkedIn
+          </a>
+          <span class="post-engage">189 reactions · 29 comments</span>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-meta">
+          <span class="post-tag">Coaching</span>
+          <span class="post-date">April 7, 2025</span>
+        </div>
+        <h2>Encouragement Isn't Soft — It's the Hardest Leadership Skill There Is</h2>
+        <p>I spent years in a culture that equated toughness with silence. You performed, you moved up, and nobody told you what you were doing right because that wasn't how it worked. I was good at it — and it cost me and my teams more than I realized. Here's what I learned about what bold encouragement actually looks like in practice.</p>
+        <div class="post-footer">
+          <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="read-on-li">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Read on LinkedIn
+          </a>
+          <span class="post-engage">408 reactions · 71 comments</span>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-meta">
+          <span class="post-tag">Leadership</span>
+          <span class="post-date">March 31, 2025</span>
+        </div>
+        <h2>The Difference Between a Team That Executes and One That Just Agrees</h2>
+        <p>Execution gaps rarely start at execution. They start at the moment a team says "yes" to a plan they don't fully believe in — or don't fully understand. In my experience running organizations through major transformations, the teams that actually delivered were the ones where disagreement happened early, loudly, and productively. Here's how to build that culture.</p>
+        <div class="post-footer">
+          <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="read-on-li">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Read on LinkedIn
+          </a>
+          <span class="post-engage">276 reactions · 45 comments</span>
+        </div>
+      </div>
+
+      <div class="notice-card" style="padding: 32px; text-align: center; background: var(--purple-50); border: 1px solid var(--purple-100); border-radius: 12px;">
+        <p style="font-size: 16px; color: var(--muted); margin-bottom: 18px; line-height: 1.7;">New posts every week. Follow Stacy on LinkedIn to get each one in your feed as soon as it drops — and to join the conversation in the comments.</p>
+        <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="linkedin-follow" style="display: inline-flex;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Follow Stacy on LinkedIn
+        </a>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-card about-sidebar">
+        <div class="avatar">SB</div>
+        <p>Stacy Balzer is a former Ford Motor Company Senior Director turned executive coach and dealership consultant. She writes weekly on leadership, team performance, and operational excellence.</p>
+        <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="linkedin-follow">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Follow on LinkedIn
+        </a>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Topics</h3>
+        <ul class="topic-list">
+          <li><a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">Leadership</a><span class="topic-count">12</span></li>
+          <li><a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">Team Communication</a><span class="topic-count">8</span></li>
+          <li><a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">Dealership Ops</a><span class="topic-count">9</span></li>
+          <li><a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">Coaching</a><span class="topic-count">7</span></li>
+          <li><a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">Women in Leadership</a><span class="topic-count">5</span></li>
+          <li><a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">EV &amp; Future of Service</a><span class="topic-count">4</span></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card notice-card">
+        <p>All posts link directly to LinkedIn — follow Stacy there to read in full and join the conversation.</p>
+        <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="linkedin-follow">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Follow on LinkedIn
+        </a>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="brand">Uplift<span>+</span>Ignite</div>
+        <div style="margin-top: 6px; font-size: 13px; opacity: 0.8;">Coaching and Consulting · Stacy Balzer</div>
+      </div>
+      <div class="footer-social">
+        <a href="mailto:stacy@upliftandignite.com">Email</a>
+        <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> Uplift + Ignite Coaching and Consulting. Encourage Boldly. Propel Execution. Spark Impact.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
