@@ -206,6 +206,62 @@
 
   @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
 
+  /* WHY STACY BAND */
+  .why-band {
+    background: linear-gradient(135deg, var(--purple-900) 0%, var(--purple-800) 100%);
+    padding: 72px 0; color: white; position: relative; overflow: hidden;
+  }
+  .why-band::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at top right, rgba(155,111,212,0.18), transparent 55%);
+    pointer-events: none;
+  }
+  .why-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; }
+  .why-headline {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(22px, 2.8vw, 34px);
+    font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.03em; line-height: 1.2;
+    color: white; margin-bottom: 32px;
+  }
+  .why-headline em { color: var(--purple-500); font-style: normal; }
+  .why-bullets { list-style: none; margin-bottom: 36px; }
+  .why-bullets li {
+    padding: 10px 0 10px 30px; position: relative;
+    font-size: 15px; color: var(--purple-100); line-height: 1.5;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .why-bullets li:last-child { border-bottom: none; }
+  .why-bullets li::before {
+    content: '✓'; position: absolute; left: 0; top: 10px;
+    color: var(--purple-500); font-weight: 800; font-size: 16px;
+  }
+  .why-bullets li strong { color: white; }
+  .why-cta-wrap { display: flex; flex-direction: column; gap: 12px; }
+  .why-cta-label { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--purple-500); }
+  .btn-white { background: white; color: var(--purple-800); border: 2px solid white; }
+  .btn-white:hover { background: var(--cream); text-decoration: none; transform: translateY(-1px); }
+  .why-services { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 32px; }
+  .why-services h3 {
+    font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--purple-500); margin-bottom: 18px;
+  }
+  .why-service-list { list-style: none; }
+  .why-service-list li {
+    padding: 9px 0 9px 24px; position: relative;
+    font-size: 15px; color: white; font-weight: 500;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .why-service-list li:last-child { border-bottom: none; }
+  .why-service-list li::before {
+    content: '✓'; position: absolute; left: 0;
+    color: var(--purple-500); font-weight: 800;
+  }
+  @media (max-width: 900px) {
+    .why-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+
   /* ABOUT */
   .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
   .about-card {
@@ -388,6 +444,39 @@
   </div>
 </section>
 
+<div class="why-band">
+  <div class="container">
+    <div class="why-inner">
+      <div>
+        <p class="why-headline">Encouragement is not soft.<br><em>It is a leadership discipline.</em></p>
+        <ul class="why-bullets">
+          <li><strong>Former Ford Senior Director</strong> | 30+ years leading complex teams &amp; dealer networks.</li>
+          <li><strong>Drives results:</strong> productivity, profitability, retention &amp; customer experience.</li>
+          <li><strong>Builds leaders</strong> with clarity, confidence &amp; consistency.</li>
+          <li><strong>Accelerates strengths</strong> through DISC Workplace Communication Certification.</li>
+        </ul>
+        <div class="why-cta-wrap">
+          <span class="why-cta-label">Let's Talk</span>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://calendly.com/upliftplusignite" target="_blank" rel="noopener" class="btn btn-white">Schedule on Calendly</a>
+            <a href="#contact" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.4); color: white;">Send a Message</a>
+          </div>
+        </div>
+      </div>
+      <div class="why-services">
+        <h3>How I Can Help You</h3>
+        <ul class="why-service-list">
+          <li>Keynote Speaker</li>
+          <li>Leadership Coach</li>
+          <li>Strengths &amp; Skills Training and Certification</li>
+          <li>Leadership Consulting</li>
+          <li>Encouraging Catalyst</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section id="services" class="alt">
   <div class="container">
     <div class="section-head">
@@ -457,6 +546,7 @@
           <li><strong>B.S. Chemical Engineering</strong>Kansas State University</li>
           <li><strong>Senior Director</strong>Service Engineering Operations, Ford Motor Company</li>
           <li><strong>ICF Member</strong>International Coaching Federation</li>
+          <li><strong>DISC Certified</strong>Workplace Communication Certification</li>
           <li><strong>Based in</strong>Detroit Metro · Serves clients globally</li>
         </ul>
       </div>
@@ -524,14 +614,21 @@
             <div class="contact-icon">✉</div>
             <div>
               <small>Email</small>
-              <a href="mailto:stacy@upliftandignite.com">stacy@upliftandignite.com</a>
+              <a href="mailto:upliftplusignite@gmail.com">upliftplusignite@gmail.com</a>
             </div>
           </li>
           <li>
-            <div class="contact-icon">📍</div>
+            <div class="contact-icon">📱</div>
             <div>
-              <small>Based in</small>
-              <span>Detroit Metro · Serving clients globally</span>
+              <small>Phone</small>
+              <a href="tel:3135759038">313-575-9038</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">📷</div>
+            <div>
+              <small>Instagram</small>
+              <a href="https://www.instagram.com/upliftplusignite" target="_blank" rel="noopener">@upliftplusignite</a>
             </div>
           </li>
           <li>
@@ -539,6 +636,13 @@
             <div>
               <small>LinkedIn</small>
               <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">linkedin.com/in/stacybalzer</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">📍</div>
+            <div>
+              <small>Based in</small>
+              <span>Detroit Metro · Serving clients globally</span>
             </div>
           </li>
         </ul>
@@ -598,7 +702,7 @@
         <div style="margin-top: 6px; font-size: 13px; opacity: 0.8;">Coaching and Consulting · Stacy Balzer</div>
       </div>
       <div class="footer-social">
-        <a href="mailto:stacy@upliftandignite.com">Email</a>
+        <a href="mailto:upliftplusignite@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
@@ -637,7 +741,7 @@
       'Interest: ' + interest + '\n\n' +
       'Message:\n' + message + '\n';
 
-    const mailto = 'mailto:stacy@upliftandignite.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    const mailto = 'mailto:upliftplusignite@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     window.location.href = mailto;
     document.getElementById('formSuccess').classList.add('show');
     return false;

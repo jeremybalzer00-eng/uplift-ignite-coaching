@@ -97,6 +97,105 @@
     .mobile-menu-btn { display: block; }
   }
 
+  /* CLEARPATH BRAND COLORS */
+  :root {
+    --navy: #0f2044;
+    --navy-light: #1a3260;
+    --orange: #e8721a;
+    --orange-light: #f5943a;
+  }
+
+  /* CLEARPATH HERO BAND */
+  .clearpath-brand {
+    background: var(--navy);
+    padding: 18px 0;
+    border-bottom: 3px solid var(--orange);
+  }
+  .clearpath-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  }
+  .clearpath-logo {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .clearpath-icon {
+    width: 48px; height: 48px; background: var(--orange);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;
+  }
+  .clearpath-wordmark { color: white; }
+  .clearpath-wordmark strong {
+    display: block; font-family: 'Inter', sans-serif;
+    font-size: 17px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .clearpath-wordmark span { font-size: 11px; color: rgba(255,255,255,0.65); letter-spacing: 0.08em; text-transform: uppercase; }
+  .clearpath-tagline {
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--orange); text-align: right;
+  }
+  @media (max-width: 600px) { .clearpath-tagline { display: none; } }
+
+  /* VIDEO MPI SECTION */
+  .vmpi-section { padding: 80px 0; background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .vmpi-header { text-align: center; margin-bottom: 48px; }
+  .vmpi-kicker {
+    font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 14px;
+  }
+  .vmpi-headline {
+    font-family: 'Fraunces', serif; font-size: clamp(28px, 3.5vw, 42px);
+    color: var(--navy); font-weight: 700; line-height: 1.15; margin-bottom: 10px;
+  }
+  .vmpi-headline em { font-style: italic; color: var(--orange); font-weight: 600; }
+  .vmpi-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: start; }
+  .vmpi-opportunity {
+    background: var(--navy);
+    border-radius: 14px; padding: 32px; color: white;
+    border-top: 4px solid var(--orange);
+  }
+  .vmpi-opportunity h3 {
+    font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--orange); margin-bottom: 24px;
+  }
+  .vmpi-stat { margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .vmpi-stat:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .vmpi-stat .num {
+    font-family: 'Fraunces', serif; font-size: 42px; font-weight: 700;
+    color: white; line-height: 1; margin-bottom: 6px;
+  }
+  .vmpi-stat .num em { color: var(--orange-light); font-style: normal; }
+  .vmpi-stat p { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .vmpi-solutions { display: flex; flex-direction: column; gap: 20px; }
+  .vmpi-solution {
+    background: var(--cream); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px 28px;
+    display: flex; align-items: flex-start; gap: 18px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .vmpi-solution:hover { border-color: var(--orange); box-shadow: 0 6px 20px rgba(232,114,26,0.1); }
+  .vmpi-solution-num {
+    font-family: 'Fraunces', serif; font-size: 36px; font-weight: 700;
+    color: var(--orange); opacity: 0.5; line-height: 1; flex-shrink: 0; width: 44px;
+  }
+  .vmpi-solution h4 {
+    font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.14em; color: var(--navy); margin-bottom: 4px;
+  }
+  .vmpi-solution .sub { font-size: 13px; color: var(--purple-700); font-weight: 600; margin-bottom: 6px; }
+  .vmpi-solution p { font-size: 14px; color: var(--muted); }
+  .vmpi-promise {
+    margin-top: 32px; padding: 28px 32px;
+    background: var(--navy); border-radius: 12px; color: white; text-align: center;
+  }
+  .vmpi-promise p {
+    font-family: 'Fraunces', serif; font-size: 20px; font-style: italic;
+    color: white; margin-bottom: 6px; line-height: 1.4;
+  }
+  .vmpi-promise p:last-of-type { font-size: 16px; color: rgba(255,255,255,0.75); margin-bottom: 20px; font-style: normal; font-family: 'Inter', sans-serif; }
+  .btn-orange { background: var(--orange); color: white; border-color: var(--orange); }
+  .btn-orange:hover { background: #c95e10; text-decoration: none; transform: translateY(-1px); }
+  @media (max-width: 900px) { .vmpi-layout { grid-template-columns: 1fr; } }
+
   /* PAGE HERO */
   .page-hero {
     padding: 64px 0 56px;
@@ -300,6 +399,19 @@
 </head>
 <body>
 
+<div class="clearpath-brand">
+  <div class="container clearpath-inner">
+    <div class="clearpath-logo">
+      <div class="clearpath-icon">⚙️</div>
+      <div class="clearpath-wordmark">
+        <strong>ClearPath Dealer Solutions</strong>
+        <span>Powered by Uplift+Ignite Coaching &amp; Consulting</span>
+      </div>
+    </div>
+    <div class="clearpath-tagline">Defined Process.<br>Confident People.<br>Measurable Results.</div>
+  </div>
+</div>
+
 <nav>
   <div class="container nav-inner">
     <a href="index.html" class="brand">Uplift<span>+</span>Ignite</a>
@@ -317,12 +429,12 @@
 
 <div class="page-hero">
   <div class="container">
-    <span class="eyebrow">Dealership Productivity Consulting</span>
+    <span class="eyebrow">ClearPath Dealer Solutions · Dealership Productivity Consulting</span>
     <h1>Turn your fixed ops into a <em>competitive advantage.</em></h1>
-    <p class="lead">Thirty years running service operations at one of the world's largest automakers — now applied directly to your dealership's toughest productivity and retention challenges.</p>
+    <p class="lead">Thirty years running service operations at one of the world's largest automakers — now applied directly to your dealership's toughest productivity and retention challenges. Defined process. Confident people. Measurable results.</p>
     <div style="display: flex; gap: 14px; flex-wrap: wrap;">
       <a href="#contact" class="btn btn-primary">Request a Consultation</a>
-      <a href="#services" class="btn btn-secondary">See What We Cover</a>
+      <a href="#vmpi" class="btn btn-secondary">See Video MPI Solutions</a>
     </div>
   </div>
 </div>
@@ -384,6 +496,70 @@
         </ul>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section class="vmpi-section" id="vmpi">
+  <div class="container">
+    <div class="vmpi-header">
+      <p class="vmpi-kicker">Video MPI Solutions</p>
+      <h2 class="vmpi-headline">
+        No Video MPI? Not Seeing Results?<br>
+        <em>It's Time. &nbsp; It's Execution.</em>
+      </h2>
+    </div>
+    <div class="vmpi-layout">
+      <div>
+        <div class="vmpi-opportunity">
+          <h3>The Video Opportunity</h3>
+          <div class="vmpi-stat">
+            <div class="num"><em>77%</em></div>
+            <p>of customers have not experienced Video MPI — it's a massive differentiator hiding in plain sight.</p>
+          </div>
+          <div class="vmpi-stat">
+            <div class="num"><em>35–60%</em></div>
+            <p>more revenue per repair order when Video MPI is implemented with proper process and adoption.</p>
+          </div>
+          <div class="vmpi-stat">
+            <div class="num"><em>+31 pts</em></div>
+            <p>J.D. Power CSI lift reported by dealers with consistent Video MPI execution.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="vmpi-solutions">
+          <div class="vmpi-solution">
+            <div class="vmpi-solution-num">01</div>
+            <div>
+              <h4>Right-Fit Strategy</h4>
+              <div class="sub">Tool + Process Alignment</div>
+              <p>Not every Video MPI tool is the right fit for your store. We assess your current process, team, and DMS environment to identify the right solution — then build the workflow around it.</p>
+            </div>
+          </div>
+          <div class="vmpi-solution">
+            <div class="vmpi-solution-num">02</div>
+            <div>
+              <h4>30-Day Activation</h4>
+              <div class="sub">Drive Adoption Fast</div>
+              <p>Launch isn't success — adoption is. Our 30-day activation program gets technicians and advisors using Video MPI consistently, with the coaching cadence to make it stick.</p>
+            </div>
+          </div>
+          <div class="vmpi-solution">
+            <div class="vmpi-solution-num">03</div>
+            <div>
+              <h4>Sustainment</h4>
+              <div class="sub">Ensure It Sticks</div>
+              <p>Most programs fail at 60 days when attention moves on. Our sustainment model keeps execution high through metrics reviews, manager coaching, and ongoing accountability loops.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vmpi-promise">
+          <p>"We don't launch and leave.<br>We partner and sustain."</p>
+          <p>Let's Fix It. 15 Minutes. Real Clarity.</p>
+          <a href="#contact" class="btn btn-orange">Schedule a 15-Minute Call</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -463,21 +639,22 @@
       <div class="contact-info">
         <span class="eyebrow">Get in touch</span>
         <h2>Let's talk about your dealership.</h2>
-        <p>Share a little about your situation and I'll reply within one business day. Speaking, coaching, and consulting inquiries are all welcome.</p>
+        <p><strong>Stacy L. Balzer</strong><br>Principal | ClearPath Dealer Solutions<br>Dealer Leadership Coach &amp; Consultant | Uplift+Ignite</p>
+        <p style="margin-top: 12px; color: var(--muted); font-size: 15px;">Share a little about your situation and I'll reply within one business day.</p>
 
         <ul class="contact-methods">
           <li>
             <div class="contact-icon">✉</div>
             <div>
               <small>Email</small>
-              <a href="mailto:stacy@upliftandignite.com">stacy@upliftandignite.com</a>
+              <a href="mailto:upliftplusignite@gmail.com">upliftplusignite@gmail.com</a>
             </div>
           </li>
           <li>
-            <div class="contact-icon">📍</div>
+            <div class="contact-icon">📱</div>
             <div>
-              <small>Based in</small>
-              <span>Detroit Metro · Serving clients globally</span>
+              <small>Phone</small>
+              <a href="tel:3135759038">313-575-9038</a>
             </div>
           </li>
           <li>
@@ -485,6 +662,13 @@
             <div>
               <small>LinkedIn</small>
               <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">linkedin.com/in/stacybalzer</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">📍</div>
+            <div>
+              <small>Based in</small>
+              <span>Detroit Metro · Serving clients globally</span>
             </div>
           </li>
         </ul>
@@ -541,16 +725,18 @@
   <div class="container">
     <div class="footer-inner">
       <div>
-        <div class="brand">Uplift<span>+</span>Ignite</div>
-        <div style="margin-top: 6px; font-size: 13px; opacity: 0.8;">Coaching and Consulting · Stacy Balzer</div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: white; margin-bottom: 4px;">ClearPath Dealer Solutions</div>
+        <div style="font-size: 12px; color: var(--purple-500); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Video MPI Solutions</div>
+        <div style="font-size: 12px; opacity: 0.6; font-style: italic;">Engineered by &nbsp;<span style="font-style: normal; font-weight: 600; opacity: 1; color: var(--purple-400, #b08de8);">Uplift<span style="color: var(--purple-500);">+</span>Ignite</span> Coaching &amp; Consulting</div>
       </div>
       <div class="footer-social">
-        <a href="mailto:stacy@upliftandignite.com">Email</a>
+        <a href="mailto:upliftplusignite@gmail.com">Email</a>
+        <a href="tel:3135759038">313-575-9038</a>
         <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
     <div class="footer-bottom">
-      © <span id="year"></span> Uplift + Ignite Coaching and Consulting. Encourage Boldly. Propel Execution. Spark Impact.
+      © <span id="year"></span> ClearPath Dealer Solutions · Powered by Uplift + Ignite Coaching and Consulting. Encourage Boldly. Propel Execution. Spark Impact.
     </div>
   </div>
 </footer>
@@ -582,7 +768,7 @@
       'Topic: ' + interest + '\n\n' +
       'Message:\n' + message + '\n';
 
-    const mailto = 'mailto:stacy@upliftandignite.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    const mailto = 'mailto:upliftplusignite@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     window.location.href = mailto;
     document.getElementById('formSuccess').classList.add('show');
     return false;
