@@ -118,10 +118,11 @@
   .clearpath-logo {
     display: flex; align-items: center; gap: 14px;
   }
-  .clearpath-icon {
-    width: 48px; height: 48px; background: var(--orange);
-    border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;
+  .clearpath-logo img {
+    height: 56px; width: auto; display: block;
+    filter: brightness(0) invert(1); /* white version on dark bar */
   }
+  .clearpath-logo img.color { filter: none; } /* use class="color" to show full color */
   .clearpath-wordmark { color: white; }
   .clearpath-wordmark strong {
     display: block; font-family: 'Inter', sans-serif;
@@ -404,8 +405,9 @@
 <div class="clearpath-brand">
   <div class="container clearpath-inner">
     <div class="clearpath-logo">
-      <div class="clearpath-icon">⚙️</div>
-      <div class="clearpath-wordmark">
+      <img src="assets/logo-clearpath.png" alt="ClearPath Dealer Solutions" class="color"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+      <div class="clearpath-wordmark" style="display:none">
         <strong>ClearPath Dealer Solutions</strong>
         <span>Powered by Uplift+Ignite Coaching &amp; Consulting</span>
       </div>
@@ -416,7 +418,12 @@
 
 <nav>
   <div class="container nav-inner">
-    <a href="index.html" class="brand">Uplift<span>+</span>Ignite</a>
+    <a href="index.html" class="brand">
+      <img src="assets/logo-upliftignite.png" alt="Uplift + Ignite Coaching and Consulting"
+           style="height:40px; width:auto; display:block;"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
+      <span style="display:none">Uplift<span style="color:var(--purple-600)">+</span>Ignite</span>
+    </a>
     <button class="mobile-menu-btn" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="index.html#services">Services</a>

@@ -409,7 +409,12 @@
 
 <nav>
   <div class="container nav-inner">
-    <a href="#top" class="brand">Uplift<span>+</span>Ignite</a>
+    <a href="#top" class="brand">
+      <img src="assets/logo-upliftignite.png" alt="Uplift + Ignite Coaching and Consulting"
+           style="height:40px; width:auto; display:block;"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
+      <span style="display:none">Uplift<span style="color:var(--purple-600)">+</span>Ignite</span>
+    </a>
     <button class="mobile-menu-btn" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="#services">Services</a>
@@ -698,8 +703,10 @@
   <div class="container">
     <div class="footer-inner">
       <div>
-        <div class="brand">Uplift<span>+</span>Ignite</div>
-        <div style="margin-top: 6px; font-size: 13px; opacity: 0.8;">Coaching and Consulting · Stacy Balzer</div>
+        <img src="assets/logo-upliftignite.png" alt="Uplift + Ignite" style="height:48px; width:auto; margin-bottom:6px; display:block;"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <div class="brand" style="display:none">Uplift<span>+</span>Ignite</div>
+        <div style="margin-top: 4px; font-size: 13px; opacity: 0.8;">Coaching and Consulting · Stacy Balzer</div>
       </div>
       <div class="footer-social">
         <a href="mailto:upliftplusignite@gmail.com">Email</a>
