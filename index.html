@@ -1,1 +1,644 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uplift + Ignite Coaching and Consulting | Stacy Balzer</title>
+<meta name="description" content="Uplift + Ignite Coaching and Consulting — Stacy Balzer helps leaders and teams encourage boldly, propel execution, and spark impact. Executive coaching, keynote speaking, and dealership productivity consulting.">
+<meta name="author" content="Stacy Balzer">
+
+<meta property="og:title" content="Uplift + Ignite Coaching and Consulting">
+<meta property="og:description" content="Encourage Boldly. Propel Execution. Spark Impact.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --purple-900: #2d1b4e;
+    --purple-800: #3f2468;
+    --purple-700: #5b3494;
+    --purple-600: #7a4fb8;
+    --purple-500: #9b6fd4;
+    --purple-100: #ede4fa;
+    --purple-50: #f7f3fd;
+    --cream: #faf7f2;
+    --ink: #1a1325;
+    --muted: #5a4d6b;
+    --border: #e4dcef;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: var(--purple-700); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 14px 0;
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--purple-800);
+    letter-spacing: -0.02em;
+  }
+  .brand span { color: var(--purple-600); font-weight: 400; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { color: var(--ink); font-size: 14px; font-weight: 500; }
+  .nav-links a:hover { color: var(--purple-700); text-decoration: none; }
+  .nav-cta {
+    background: var(--purple-700);
+    color: white !important;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 14px; font-weight: 600;
+    transition: background 0.15s;
+  }
+  .nav-cta:hover { background: var(--purple-800); text-decoration: none !important; }
+  .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 6px; font-size: 20px; color: var(--ink); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      background: var(--cream);
+      padding: 18px 24px; gap: 16px;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .mobile-menu-btn { display: block; }
+  }
+
+  /* HERO */
+  .hero {
+    padding: 72px 0 64px;
+    background:
+      radial-gradient(ellipse at top right, rgba(155, 111, 212, 0.15), transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(91, 52, 148, 0.08), transparent 60%),
+      var(--cream);
+    position: relative; overflow: hidden;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: center; }
+  .eyebrow {
+    font-size: 13px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--purple-700); margin-bottom: 18px;
+  }
+  .hero h1 { font-size: clamp(40px, 5vw, 62px); color: var(--ink); margin-bottom: 20px; }
+  .hero h1 em { font-style: italic; color: var(--purple-700); font-weight: 400; }
+  .hero .tagline {
+    font-family: 'Fraunces', serif;
+    font-size: 18px; font-style: italic;
+    color: var(--purple-800); margin-bottom: 20px;
+  }
+  .hero .lead { font-size: 18px; color: var(--muted); max-width: 520px; margin-bottom: 32px; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-block; padding: 14px 26px;
+    border-radius: 8px;
+    font-weight: 600; font-size: 15px;
+    transition: all 0.15s;
+    border: 2px solid transparent;
+    cursor: pointer; text-align: center;
+  }
+  .btn-primary { background: var(--purple-700); color: white; }
+  .btn-primary:hover { background: var(--purple-800); text-decoration: none; transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: var(--purple-700); border-color: var(--purple-700); }
+  .btn-secondary:hover { background: var(--purple-700); color: white; text-decoration: none; }
+
+  .hero-photo { position: relative; justify-self: center; }
+  .photo-frame {
+    width: 360px; height: 360px; max-width: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple-500), var(--purple-800));
+    padding: 8px;
+    box-shadow: 0 20px 60px rgba(45, 27, 78, 0.25);
+    position: relative; z-index: 2;
+  }
+  .photo-frame img {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #524555;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .hero-ctas { justify-content: center; }
+    .hero .lead { margin-left: auto; margin-right: auto; }
+    .photo-frame { width: 260px; height: 260px; }
+  }
+
+  /* SECTIONS */
+  section { padding: 80px 0; }
+  section.alt { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .section-head { max-width: 720px; margin: 0 auto 56px; text-align: center; }
+  .section-head .eyebrow { display: block; }
+  .section-head h2 { font-size: clamp(30px, 3.5vw, 44px); margin-bottom: 16px; }
+  .section-head p { font-size: 17px; color: var(--muted); }
+
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .service-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 32px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: flex; flex-direction: column;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(91, 52, 148, 0.12);
+    border-color: var(--purple-500);
+  }
+  .service-icon {
+    width: 52px; height: 52px;
+    border-radius: 10px;
+    background: var(--purple-100);
+    color: var(--purple-700);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px; font-size: 24px;
+  }
+  .service-card h3 { font-size: 22px; margin-bottom: 12px; color: var(--ink); }
+  .service-card p { color: var(--muted); font-size: 15px; margin-bottom: 18px; flex-grow: 1; }
+  .service-card ul { list-style: none; margin-bottom: 20px; }
+  .service-card ul li {
+    font-size: 14px; color: var(--ink);
+    padding: 6px 0 6px 22px; position: relative;
+  }
+  .service-card ul li::before {
+    content: '✓'; position: absolute; left: 0;
+    color: var(--purple-600); font-weight: 700;
+  }
+  .service-card .service-cta { color: var(--purple-700); font-weight: 600; font-size: 14px; }
+
+  @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; } }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+  .about-card {
+    background: linear-gradient(145deg, var(--purple-800), var(--purple-900));
+    border-radius: 14px; padding: 32px; color: white;
+  }
+  .about-card h4 {
+    font-size: 14px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--purple-500); margin-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+  }
+  .about-card .stat {
+    font-family: 'Fraunces', serif;
+    font-size: 56px; font-weight: 700;
+    line-height: 1; margin-bottom: 8px; color: white;
+  }
+  .about-card .stat-label { font-size: 15px; color: var(--purple-100); margin-bottom: 24px; }
+  .about-card hr { border: none; height: 1px; background: rgba(255, 255, 255, 0.15); margin: 20px 0; }
+  .creds { list-style: none; }
+  .creds li { font-size: 14px; padding: 8px 0; color: var(--purple-100); }
+  .creds li strong { color: white; display: block; font-weight: 600; margin-bottom: 2px; }
+
+  .about-body h2 { font-size: clamp(28px, 3vw, 38px); margin-bottom: 20px; }
+  .about-body p { font-size: 16px; color: var(--ink); margin-bottom: 16px; line-height: 1.75; }
+  .about-body .lead-p {
+    font-size: 19px; font-family: 'Fraunces', serif;
+    color: var(--purple-800); font-style: italic;
+    margin-bottom: 24px; line-height: 1.5;
+  }
+
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+  /* APPROACH */
+  .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .approach-num {
+    font-family: 'Fraunces', serif;
+    font-size: 56px; font-weight: 700;
+    color: var(--purple-500);
+    line-height: 1; margin-bottom: 12px; opacity: 0.5;
+  }
+  .approach-item h3 { font-size: 22px; margin-bottom: 10px; color: var(--ink); }
+  .approach-item p { color: var(--muted); font-size: 15px; }
+  @media (max-width: 768px) { .approach-grid { grid-template-columns: 1fr; gap: 24px; } }
+
+  /* CTA BAND */
+  .cta-band {
+    background: linear-gradient(135deg, var(--purple-800) 0%, var(--purple-600) 100%);
+    color: white; padding: 72px 0; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-band::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08), transparent 40%),
+      radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08), transparent 40%);
+  }
+  .cta-band > * { position: relative; z-index: 1; }
+  .cta-band h2 { font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 16px; color: white; }
+  .cta-band p { font-size: 18px; margin-bottom: 28px; opacity: 0.9; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .cta-band .btn-primary { background: white; color: var(--purple-800); }
+  .cta-band .btn-primary:hover { background: var(--cream); }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
+  .contact-info h2 { font-size: clamp(28px, 3vw, 38px); margin-bottom: 16px; }
+  .contact-info p { color: var(--muted); font-size: 16px; margin-bottom: 24px; }
+  .contact-methods { list-style: none; }
+  .contact-methods li {
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .contact-methods li:last-child { border-bottom: none; }
+  .contact-icon {
+    width: 40px; height: 40px;
+    background: var(--purple-100); color: var(--purple-700);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-weight: 700;
+  }
+  .contact-methods small {
+    display: block; color: var(--muted); font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px;
+  }
+  .contact-methods a, .contact-methods span { color: var(--ink); font-weight: 500; }
+
+  form {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 32px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label {
+    display: block; font-size: 13px; font-weight: 600;
+    margin-bottom: 6px; color: var(--ink);
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit; font-size: 15px;
+    color: var(--ink); background: var(--cream);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none; border-color: var(--purple-600);
+    box-shadow: 0 0 0 3px rgba(122, 79, 184, 0.15);
+  }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  form button[type="submit"] { width: 100%; margin-top: 8px; }
+  .form-success {
+    background: #e8f5e9; color: #1b5e20;
+    padding: 14px; border-radius: 8px;
+    margin-bottom: 16px; display: none; font-size: 14px;
+  }
+  .form-success.show { display: block; }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--purple-900); color: var(--purple-100);
+    padding: 40px 0 24px; font-size: 14px;
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 20px; flex-wrap: wrap;
+  }
+  footer .brand { color: white; }
+  footer .brand span { color: var(--purple-500); }
+  .footer-social a { color: var(--purple-100); margin-left: 18px; font-weight: 500; }
+  .footer-social a:hover { color: white; text-decoration: none; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 28px; padding-top: 20px;
+    text-align: center; opacity: 0.7; font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#top" class="brand">Uplift<span>+</span>Ignite</a>
+    <button class="mobile-menu-btn" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact" class="nav-cta">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Uplift + Ignite Coaching and Consulting</div>
+        <h1>Build encouraged teams. <em>Get results.</em> Have lasting impact.</h1>
+        <p class="tagline">Encourage Boldly. Propel Execution. Spark Impact.</p>
+        <p class="lead">Leadership coaching, keynote speaking, and dealership productivity consulting from a global automotive executive with 30 years of turnaround and team-building experience.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+          <a href="#services" class="btn btn-secondary">Explore Services</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img src="assets/headshot-hires.png" alt="Stacy Balzer, Founder of Uplift + Ignite Coaching and Consulting">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2>Three ways I partner with leaders and teams</h2>
+      <p>Every engagement is tailored. Start with a free discovery call to find the right fit.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🎤</div>
+        <h3>Keynote Speaking</h3>
+        <p>Compelling talks for leadership summits, industry conferences, and company all-hands. Real stories from 30 years in the trenches of one of the world's largest automakers.</p>
+        <ul>
+          <li>Leading through transformation</li>
+          <li>Building high-performance teams</li>
+          <li>Women in engineering &amp; leadership</li>
+          <li>Customer-centric operations</li>
+        </ul>
+        <a href="#contact" class="service-cta">Book Stacy to speak →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧭</div>
+        <h3>Leadership Coaching</h3>
+        <p>One-on-one and team coaching for executives, directors, and emerging leaders. Servant-leadership approach focused on people growth, clarity, and sustainable performance.</p>
+        <ul>
+          <li>Executive 1:1 coaching</li>
+          <li>High-performing team workshops</li>
+          <li>New-leader onboarding</li>
+          <li>Succession &amp; capability building</li>
+        </ul>
+        <a href="#contact" class="service-cta">Start a coaching engagement →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Dealership Productivity</h3>
+        <p>Hands-on consulting for dealer fixed operations, service efficiency, and customer retention. Deep expertise across warranty, technical training, recalls, and connected-vehicle service.</p>
+        <ul>
+          <li>Fixed operations diagnostics</li>
+          <li>Service process redesign</li>
+          <li>Technician recruiting &amp; training</li>
+          <li>Customer retention strategy</li>
+        </ul>
+        <a href="#contact" class="service-cta">Request a consultation →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-card">
+        <h4>Track Record</h4>
+        <div class="stat">30+</div>
+        <div class="stat-label">Years at Ford Motor Company</div>
+        <div class="stat">1,100+</div>
+        <div class="stat-label">Global employees led at peak</div>
+        <hr>
+        <h4>Credentials</h4>
+        <ul class="creds">
+          <li><strong>M.S. Engineering Management</strong>University of Michigan–Dearborn</li>
+          <li><strong>B.S. Chemistry</strong>Kansas State University</li>
+          <li><strong>Former Operating Director</strong>Service Engineering Operations, Ford Motor Company</li>
+          <li><strong>Based in</strong>Detroit Metro · Serves clients globally</li>
+        </ul>
+      </div>
+
+      <div class="about-body">
+        <span class="eyebrow">About Stacy</span>
+        <h2>Three decades turning around service organizations — now turning my attention to you.</h2>
+        <p class="lead-p">I spent my career fixing the things other leaders couldn't. Now I help leaders fix the things holding their teams back.</p>
+        <p>I'm Stacy Balzer, a global automotive industry executive turned coach and consultant. For thirty years at Ford Motor Company, I led service operations turnarounds — taking on the critical support organizations, systems, and processes that were stuck, and bringing them into high performance.</p>
+        <p>As Operating Director of Service Engineering Operations, I led 600+ U.S. employees and 500+ global functional teammates across Recall, Warranty, Technical Support, Technical Training, Diagnostics, and Vehicle Health. I pioneered Ford's Voice of Customer strategy and led the service conversion for connected, electric, and autonomous vehicles.</p>
+        <p>But the work I'm proudest of isn't a program or a platform — it's the people. Servant leadership, high-performance team collaboration, and devotion to people growth are what built every one of those results. That's the work I want to do with you.</p>
+        <div style="margin-top: 28px;">
+          <a href="#contact" class="btn btn-primary">Let's Talk</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Approach</span>
+      <h2>How we work together</h2>
+      <p>Three words, three promises — and a process built from decades of getting it done.</p>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-item">
+        <div class="approach-num">01</div>
+        <h3>Encourage Boldly</h3>
+        <p>Real growth starts with belief. I'll name what's working, challenge what isn't, and create the space for you and your team to take the brave next step — not the safe one.</p>
+      </div>
+      <div class="approach-item">
+        <div class="approach-num">02</div>
+        <h3>Propel Execution</h3>
+        <p>Vision without delivery is noise. Every engagement ends with concrete systems, rituals, and metrics your team owns — so progress keeps happening after I'm gone.</p>
+      </div>
+      <div class="approach-item">
+        <div class="approach-num">03</div>
+        <h3>Spark Impact</h3>
+        <p>The goal isn't a report. It's results you feel — in retention, in throughput, in the energy of the room. I measure success by what stays changed six months later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="container">
+    <h2>Ready to uplift your leaders and ignite results?</h2>
+    <p>Every engagement starts with a free 30-minute discovery call. No pressure, no script — just a conversation about what's in front of you.</p>
+    <a href="#contact" class="btn btn-primary">Schedule a Discovery Call</a>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Let's start a conversation.</h2>
+        <p>Share a little about what you're working on and I'll reply within one business day. All inquiries — speaking, coaching, consulting, or something else — are welcome.</p>
+
+        <ul class="contact-methods">
+          <li>
+            <div class="contact-icon">✉</div>
+            <div>
+              <small>Email</small>
+              <a href="mailto:stacy@upliftandignite.com">stacy@upliftandignite.com</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">📍</div>
+            <div>
+              <small>Based in</small>
+              <span>Detroit Metro · Serving clients globally</span>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">in</div>
+            <div>
+              <small>LinkedIn</small>
+              <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">linkedin.com/in/stacybalzer</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <form id="contactForm" onsubmit="return handleSubmit(event)">
+        <div class="form-success" id="formSuccess">Thanks — your message has been prepared in your email client. Please click send to complete.</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First name *</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last name *</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="company">Company / Organization</label>
+          <input type="text" id="company" name="company">
+        </div>
+
+        <div class="form-group">
+          <label for="interest">I'm interested in *</label>
+          <select id="interest" name="interest" required>
+            <option value="">Please select…</option>
+            <option value="Keynote Speaking">Keynote Speaking</option>
+            <option value="Leadership Coaching">Leadership Coaching</option>
+            <option value="Dealership Productivity Consulting">Dealership Productivity Consulting</option>
+            <option value="Not sure yet">Not sure yet — let's explore</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Tell me a little about what you're working on *</label>
+          <textarea id="message" name="message" required placeholder="What's on your mind? Any timing or context I should know?"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="brand">Uplift<span>+</span>Ignite</div>
+        <div style="margin-top: 6px; font-size: 13px; opacity: 0.8;">Coaching and Consulting · Stacy Balzer</div>
+      </div>
+      <div class="footer-social">
+        <a href="mailto:stacy@upliftandignite.com">Email</a>
+        <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> Uplift + Ignite Coaching and Consulting. Encourage Boldly. Propel Execution. Spark Impact.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // Prototype contact form: hands off to the user's email client via mailto.
+  // For production, swap for Formspree/Netlify Forms/Basin endpoint.
+  function handleSubmit(e) {
+    e.preventDefault();
+    const f = e.target;
+    const firstName = f.firstName.value.trim();
+    const lastName = f.lastName.value.trim();
+    const email = f.email.value.trim();
+    const company = f.company.value.trim();
+    const interest = f.interest.value;
+    const message = f.message.value.trim();
+
+    const subject = '[Website Inquiry] ' + interest + ' — ' + firstName + ' ' + lastName;
+    const body =
+      'Name: ' + firstName + ' ' + lastName + '\n' +
+      'Email: ' + email + '\n' +
+      'Company: ' + (company || '(not provided)') + '\n' +
+      'Interest: ' + interest + '\n\n' +
+      'Message:\n' + message + '\n';
+
+    const mailto = 'mailto:stacy@upliftandignite.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = mailto;
+    document.getElementById('formSuccess').classList.add('show');
+    return false;
+  }
+</script>
+
+</body>
+</html>
