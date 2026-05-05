@@ -14,17 +14,18 @@
 
 <style>
   :root {
-    --purple-900: #2d1b4e;
-    --purple-800: #3f2468;
-    --purple-700: #5b3494;
-    --purple-600: #7a4fb8;
-    --purple-500: #9b6fd4;
-    --purple-100: #ede4fa;
-    --purple-50: #f7f3fd;
-    --cream: #faf7f2;
-    --ink: #1a1325;
-    --muted: #5a4d6b;
-    --border: #e4dcef;
+    /* ClearPath Dealer Solutions — Navy + Orange theme */
+    --purple-900: #060e1e;   /* deep navy */
+    --purple-800: #0f2044;   /* navy */
+    --purple-700: #e8721a;   /* orange — links, eyebrows, icons */
+    --purple-600: #c95e10;   /* dark orange — hover states */
+    --purple-500: #f5943a;   /* light orange — accents */
+    --purple-100: #fef0e6;   /* light orange bg */
+    --purple-50:  #fff8f4;   /* very light orange bg */
+    --cream: #faf9f7;
+    --ink: #0d1a2e;
+    --muted: #4a5a72;
+    --border: #dde4ee;
     --white: #ffffff;
   }
 
@@ -54,10 +55,10 @@
   /* NAV */
   nav {
     position: sticky; top: 0;
-    background: rgba(250, 247, 242, 0.92);
+    background: rgba(250, 249, 247, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--orange);
     z-index: 100;
     padding: 14px 0;
   }
@@ -200,8 +201,8 @@
   .page-hero {
     padding: 64px 0 56px;
     background:
-      radial-gradient(ellipse at top right, rgba(155, 111, 212, 0.15), transparent 60%),
-      radial-gradient(ellipse at bottom left, rgba(91, 52, 148, 0.08), transparent 60%),
+      radial-gradient(ellipse at top right, rgba(232, 114, 26, 0.13), transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(15, 32, 68, 0.06), transparent 60%),
       var(--cream);
   }
   .eyebrow {
@@ -268,7 +269,7 @@
 
   /* EXPERIENCE BAND */
   .experience-band {
-    background: linear-gradient(145deg, var(--purple-800), var(--purple-900));
+    background: linear-gradient(145deg, #0f2044, #060e1e);
     color: white; padding: 72px 0;
   }
   .experience-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: center; }
@@ -276,10 +277,10 @@
   .exp-stat .num {
     font-family: 'Fraunces', serif;
     font-size: 52px; font-weight: 700; line-height: 1;
-    color: white; margin-bottom: 6px;
+    color: var(--orange); margin-bottom: 6px;
   }
-  .exp-stat .label { font-size: 14px; color: var(--purple-100); }
-  .exp-divider { height: 1px; background: rgba(255,255,255,0.15); }
+  .exp-stat .label { font-size: 14px; color: rgba(255,255,255,0.75); }
+  .exp-divider { height: 1px; background: rgba(232,114,26,0.3); }
   .exp-body h2 { font-size: clamp(26px, 3vw, 36px); color: white; margin-bottom: 18px; }
   .exp-body p { font-size: 16px; color: var(--purple-100); line-height: 1.75; margin-bottom: 14px; }
   .exp-body p:last-child { margin-bottom: 0; }
@@ -291,7 +292,7 @@
   .step-num {
     font-family: 'Fraunces', serif;
     font-size: 48px; font-weight: 700;
-    color: var(--purple-500); opacity: 0.4;
+    color: var(--orange); opacity: 0.5;
     line-height: 1; margin-bottom: 10px;
   }
   .process-step h3 { font-size: 18px; margin-bottom: 8px; }
@@ -301,7 +302,7 @@
 
   /* CTA BAND */
   .cta-band {
-    background: linear-gradient(135deg, var(--purple-800) 0%, var(--purple-600) 100%);
+    background: linear-gradient(135deg, #0f2044 0%, #e8721a 100%);
     color: white; padding: 72px 0; text-align: center;
     position: relative; overflow: hidden;
   }
@@ -379,8 +380,9 @@
 
   /* FOOTER */
   footer {
-    background: var(--purple-900); color: var(--purple-100);
+    background: #060e1e; color: rgba(255,255,255,0.75);
     padding: 40px 0 24px; font-size: 14px;
+    border-top: 3px solid var(--orange);
   }
   .footer-inner {
     display: flex; justify-content: space-between; align-items: center;
