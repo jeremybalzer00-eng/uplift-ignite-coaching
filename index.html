@@ -58,12 +58,19 @@
   /* NAV */
   nav {
     position: sticky; top: 0;
-    background: rgba(250, 247, 242, 0.92);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid transparent;
+    z-index: 100;
+    padding: 14px 0;
+    transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
+  }
+  nav.scrolled {
+    background: rgba(250, 247, 242, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
-    z-index: 100;
-    padding: 14px 0;
   }
   .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
   .brand {
@@ -420,7 +427,7 @@
   <div class="container nav-inner">
     <a href="#top" class="brand">
       <img src="assets/logo-upliftignite.jpg" alt="Uplift + Ignite Coaching and Consulting"
-           style="height:40px; width:auto; display:block; filter: hue-rotate(-30deg); mix-blend-mode: multiply;"
+           style="height:60px; width:auto; display:block; filter: hue-rotate(-30deg); mix-blend-mode: multiply;"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
       <span style="display:none">Uplift<span style="color:var(--purple-600)">+</span>Ignite</span>
     </a>
@@ -740,7 +747,7 @@
   <div class="container">
     <div class="footer-inner">
       <div>
-        <img src="assets/logo-upliftignite.jpg" alt="Uplift + Ignite" style="height:48px; width:auto; margin-bottom:6px; display:block; filter: hue-rotate(-30deg); mix-blend-mode: screen;"
+        <img src="assets/logo-upliftignite.jpg" alt="Uplift + Ignite" style="height:80px; width:auto; margin-bottom:6px; display:block; filter: hue-rotate(-30deg); mix-blend-mode: screen;"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
         <div class="brand" style="display:none">Uplift<span>+</span>Ignite</div>
         <div style="margin-top: 4px; font-size: 13px; opacity: 0.8;">Coaching and Consulting · Stacy Balzer</div>
@@ -758,6 +765,11 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
 
   document.querySelectorAll('#navLinks a').forEach(a => {
     a.addEventListener('click', () => {
