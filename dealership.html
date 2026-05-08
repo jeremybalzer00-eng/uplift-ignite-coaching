@@ -55,27 +55,34 @@
   /* NAV */
   nav {
     position: sticky; top: 0;
-    background: rgba(250, 249, 247, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--orange);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid transparent;
     z-index: 100;
     padding: 14px 0;
+    transition: background 0.3s, border-color 0.3s;
   }
+  nav.scrolled {
+    background: rgba(15, 32, 68, 0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 3px solid var(--orange);
+  }
+  nav.scrolled .nav-links a { color: rgba(255,255,255,0.85); }
+  nav.scrolled .nav-links a:hover { color: white; text-decoration: none; }
+  nav.scrolled .nav-links a.active { color: var(--orange-light); }
+  nav.scrolled .mobile-menu-btn { color: white; }
+
   .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-  .brand {
-    font-family: 'Fraunces', serif;
-    font-size: 20px; font-weight: 700;
-    color: var(--purple-800);
-    letter-spacing: -0.02em;
-  }
+  .brand { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--purple-800); letter-spacing: -0.02em; }
   .brand span { color: var(--purple-600); font-weight: 400; }
   .nav-links { display: flex; gap: 28px; align-items: center; }
   .nav-links a { color: var(--ink); font-size: 14px; font-weight: 500; }
   .nav-links a:hover { color: var(--purple-700); text-decoration: none; }
   .nav-links a.active { color: var(--purple-700); }
   .nav-cta {
-    background: var(--purple-700);
+    background: var(--orange);
     color: white !important;
     padding: 9px 18px;
     border-radius: 6px;
@@ -84,6 +91,17 @@
   }
   .nav-cta:hover { background: var(--purple-800); text-decoration: none !important; }
   .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 6px; font-size: 20px; color: var(--ink); }
+
+  /* ClearPath nav logo */
+  .clearpath-nav-logo {
+    height: 72px; width: auto; display: block;
+    mix-blend-mode: multiply;
+    transition: filter 0.3s, mix-blend-mode 0.3s;
+  }
+  nav.scrolled .clearpath-nav-logo {
+    mix-blend-mode: normal;
+    filter: brightness(0) invert(1);
+  }
 
   @media (max-width: 768px) {
     .nav-links { display: none; }
@@ -95,6 +113,8 @@
       border-bottom: 1px solid var(--border);
       align-items: flex-start;
     }
+    nav.scrolled .nav-links.open { background: var(--navy); }
+    nav.scrolled .nav-links.open a { color: rgba(255,255,255,0.85); }
     .mobile-menu-btn { display: block; }
   }
 
@@ -402,25 +422,11 @@
 </head>
 <body>
 
-<div class="clearpath-brand">
-  <div class="container clearpath-inner">
-    <div class="clearpath-logo">
-      <img src="assets/logo-clearpath.png" alt="ClearPath Dealer Solutions" class="color"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-      <div class="clearpath-wordmark" style="display:none">
-        <strong>ClearPath Dealer Solutions</strong>
-        <span>Powered by Uplift+Ignite Coaching &amp; Consulting</span>
-      </div>
-    </div>
-    <div class="clearpath-tagline">Defined Process.<br>Confident People.<br>Measurable Results.</div>
-  </div>
-</div>
-
 <nav>
   <div class="container nav-inner">
     <a href="index.html" class="brand">
       <img src="assets/logo-clearpath.png" alt="ClearPath Dealer Solutions"
-           style="height:56px; width:auto; display:block; mix-blend-mode: multiply;"
+           class="clearpath-nav-logo"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
       <span style="display:none">ClearPath<span style="color:var(--orange)">.</span></span>
     </a>
@@ -743,6 +749,11 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
 
   document.querySelectorAll('#navLinks a').forEach(a => {
     a.addEventListener('click', () => {
