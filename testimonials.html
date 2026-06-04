@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script defer src="/_vercel/insights/script.js"></script>
 
 <style>
   :root {
@@ -131,13 +132,12 @@
   .section-head h2 { font-size: clamp(26px, 3vw, 38px); margin-bottom: 12px; }
   .section-head p { font-size: 16px; color: var(--muted); }
 
-  /* TESTIMONIAL CARDS */
+  /* TESTIMONIAL CARDS — 2-column grid */
   .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
-  @media (max-width: 1000px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .testimonials-grid { grid-template-columns: 1fr; } }
 
   .testimonial-card {
@@ -149,7 +149,6 @@
     flex-direction: column;
     gap: 20px;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-    position: relative;
   }
   .testimonial-card:hover {
     transform: translateY(-4px);
@@ -178,14 +177,14 @@
     border-top: 1px solid var(--border);
   }
 
-  /* REVIEWS GRID */
+  /* REVIEW CARDS — 3-column */
   .reviews-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
-  @media (max-width: 1000px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 640px) { .reviews-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .reviews-grid { grid-template-columns: 1fr; } }
 
   .review-card {
     background: var(--purple-50);
@@ -219,6 +218,59 @@
     color: var(--purple-800);
     padding-top: 10px;
     border-top: 1px solid var(--border);
+  }
+
+  /* PAGINATOR */
+  .paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 44px;
+  }
+  .pag-btn {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--purple-700);
+    background: white;
+    color: var(--purple-700);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, color 0.15s, opacity 0.15s;
+    flex-shrink: 0;
+  }
+  .pag-btn:hover:not(:disabled) {
+    background: var(--purple-700);
+    color: white;
+  }
+  .pag-btn:disabled {
+    opacity: 0.25;
+    cursor: default;
+  }
+  .pag-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .pag-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  .pag-dot.active {
+    background: var(--purple-700);
+    transform: scale(1.3);
+  }
+  .pag-count {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+    min-width: 60px;
+    text-align: center;
   }
 
   /* CTA BAND */
@@ -298,14 +350,15 @@
   </div>
 </div>
 
-<!-- TESTIMONIALS -->
+<!-- TESTIMONIALS — 2×3, paginated (6 per page, 2 pages) -->
 <section id="testimonials">
   <div class="container">
     <div class="section-head">
       <h2>Testimonials</h2>
       <p>Words from those who have worked with Stacy as a coach, mentor, and leader.</p>
     </div>
-    <div class="testimonials-grid">
+
+    <div class="testimonials-grid" id="testimonialsGrid">
 
       <div class="testimonial-card">
         <div class="quote-mark">&ldquo;</div>
@@ -380,17 +433,25 @@
       </div>
 
     </div>
+
+    <div class="paginator" id="tPaginator">
+      <button class="pag-btn" id="tPrev" aria-label="Previous">&#8592;</button>
+      <div class="pag-dots" id="tDots"></div>
+      <span class="pag-count" id="tCount"></span>
+      <button class="pag-btn" id="tNext" aria-label="Next">&#8594;</button>
+    </div>
   </div>
 </section>
 
-<!-- ADDITIONAL REVIEWS -->
+<!-- ADDITIONAL REVIEWS — 3 per page, paginated -->
 <section id="reviews" class="alt">
   <div class="container">
     <div class="section-head">
       <h2>Additional Reviews</h2>
       <p>More from colleagues and clients who have experienced Stacy's leadership and coaching.</p>
     </div>
-    <div class="reviews-grid">
+
+    <div class="reviews-grid" id="reviewsGrid">
 
       <div class="review-card">
         <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -477,6 +538,13 @@
       </div>
 
     </div>
+
+    <div class="paginator" id="rPaginator">
+      <button class="pag-btn" id="rPrev" aria-label="Previous">&#8592;</button>
+      <div class="pag-dots" id="rDots"></div>
+      <span class="pag-count" id="rCount"></span>
+      <button class="pag-btn" id="rNext" aria-label="Next">&#8594;</button>
+    </div>
   </div>
 </section>
 
@@ -518,10 +586,51 @@
   });
 
   document.querySelectorAll('#navLinks a').forEach(a => {
-    a.addEventListener('click', () => {
-      document.getElementById('navLinks').classList.remove('open');
-    });
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
   });
+
+  function initPaginator({ gridId, prevId, nextId, dotsId, countId, perPage }) {
+    const grid = document.getElementById(gridId);
+    const items = Array.from(grid.children);
+    const total = items.length;
+    const pages = Math.ceil(total / perPage);
+    let current = 0;
+
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    const dotsEl = document.getElementById(dotsId);
+    const countEl = document.getElementById(countId);
+
+    // build dots
+    for (let i = 0; i < pages; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'pag-dot';
+      dot.setAttribute('aria-label', 'Page ' + (i + 1));
+      dot.addEventListener('click', () => { current = i; render(); });
+      dotsEl.appendChild(dot);
+    }
+
+    function render() {
+      items.forEach((item, i) => {
+        item.style.display = (i >= current * perPage && i < (current + 1) * perPage) ? '' : 'none';
+      });
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current === pages - 1;
+      dotsEl.querySelectorAll('.pag-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+      countEl.textContent = (current + 1) + ' / ' + pages;
+    }
+
+    prevBtn.addEventListener('click', () => { if (current > 0) { current--; render(); } });
+    nextBtn.addEventListener('click', () => { if (current < pages - 1) { current++; render(); } });
+
+    render();
+  }
+
+  // Testimonials: 2 columns × 3 rows = 6 per page
+  initPaginator({ gridId: 'testimonialsGrid', prevId: 'tPrev', nextId: 'tNext', dotsId: 'tDots', countId: 'tCount', perPage: 6 });
+
+  // Reviews: 3 per page
+  initPaginator({ gridId: 'reviewsGrid', prevId: 'rPrev', nextId: 'rNext', dotsId: 'rDots', countId: 'rCount', perPage: 3 });
 </script>
 
 </body>
