@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials &amp; Reviews | Uplift + Ignite Coaching and Consulting</title>
+<meta name="description" content="What clients, colleagues, and leaders say about working with Stacy Balzer and Uplift + Ignite Coaching and Consulting.">
+<meta name="author" content="Stacy Balzer">
+
+<meta property="og:title" content="Testimonials &amp; Reviews | Uplift + Ignite Coaching and Consulting">
+<meta property="og:description" content="What clients, colleagues, and leaders say about working with Stacy Balzer.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --purple-900: #2d1b4e;
+    --purple-800: #3f2468;
+    --purple-700: #5b3494;
+    --purple-600: #7a4fb8;
+    --purple-500: #9b6fd4;
+    --purple-100: #ede4fa;
+    --purple-50: #f7f3fd;
+    --cream: #faf7f2;
+    --ink: #1a1325;
+    --muted: #5a4d6b;
+    --border: #e4dcef;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: var(--purple-700); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid transparent;
+    z-index: 100;
+    padding: 14px 0;
+    transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
+  }
+  nav.scrolled {
+    background: rgba(250, 247, 242, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--purple-800);
+    letter-spacing: -0.02em;
+  }
+  .brand span { color: var(--purple-600); font-weight: 400; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { color: var(--ink); font-size: 14px; font-weight: 500; }
+  .nav-links a:hover { color: var(--purple-700); text-decoration: none; }
+  .nav-links a.active { color: var(--purple-700); }
+  .nav-cta {
+    background: var(--purple-700);
+    color: white !important;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 14px; font-weight: 600;
+    transition: background 0.15s;
+  }
+  .nav-cta:hover { background: var(--purple-800); text-decoration: none !important; }
+  .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 6px; font-size: 20px; color: var(--ink); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      background: var(--cream);
+      padding: 18px 24px; gap: 16px;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .mobile-menu-btn { display: block; }
+  }
+
+  /* PAGE HERO */
+  .page-hero {
+    padding: 64px 0 56px;
+    background:
+      radial-gradient(ellipse at top right, rgba(155, 111, 212, 0.15), transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(91, 52, 148, 0.08), transparent 60%),
+      var(--cream);
+    text-align: center;
+  }
+  .eyebrow {
+    font-size: 13px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--purple-700); margin-bottom: 16px; display: block;
+  }
+  .page-hero h1 { font-size: clamp(32px, 4vw, 52px); color: var(--ink); margin-bottom: 18px; }
+  .page-hero p { font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto; }
+
+  /* SECTIONS */
+  section { padding: 72px 0; }
+  section.alt { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .section-head { max-width: 720px; margin: 0 auto 52px; text-align: center; }
+  .section-head h2 { font-size: clamp(26px, 3vw, 38px); margin-bottom: 12px; }
+  .section-head p { font-size: 16px; color: var(--muted); }
+
+  /* TESTIMONIAL CARDS */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 1000px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+  .testimonial-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(91, 52, 148, 0.10);
+    border-color: var(--purple-500);
+  }
+  .quote-mark {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    line-height: 0.6;
+    color: var(--purple-500);
+    opacity: 0.35;
+    user-select: none;
+  }
+  .testimonial-text {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.75;
+    flex-grow: 1;
+  }
+  .testimonial-author {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--purple-800);
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* REVIEWS GRID */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 1000px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .reviews-grid { grid-template-columns: 1fr; } }
+
+  .review-card {
+    background: var(--purple-50);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .review-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(91, 52, 148, 0.10);
+    border-color: var(--purple-500);
+  }
+  .stars {
+    color: #f59e0b;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .review-text {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.7;
+    flex-grow: 1;
+  }
+  .review-author {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--purple-800);
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    background: linear-gradient(135deg, var(--purple-800) 0%, var(--purple-600) 100%);
+    color: white; padding: 72px 0; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-band::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08), transparent 40%),
+      radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08), transparent 40%);
+  }
+  .cta-band > * { position: relative; z-index: 1; }
+  .cta-band h2 { font-size: clamp(26px, 3.5vw, 40px); margin-bottom: 16px; color: white; }
+  .cta-band p { font-size: 17px; margin-bottom: 28px; opacity: 0.9; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .btn {
+    display: inline-block; padding: 14px 26px;
+    border-radius: 8px;
+    font-weight: 600; font-size: 15px;
+    transition: all 0.15s;
+    border: 2px solid transparent;
+    cursor: pointer; text-align: center;
+  }
+  .btn-primary { background: white; color: var(--purple-800); }
+  .btn-primary:hover { background: var(--cream); text-decoration: none; transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--purple-900); color: var(--purple-100);
+    padding: 40px 0 24px; font-size: 14px;
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 20px; flex-wrap: wrap;
+  }
+  footer .brand { color: white; }
+  footer .brand span { color: var(--purple-500); }
+  .footer-social a { color: var(--purple-100); margin-left: 18px; font-weight: 500; }
+  .footer-social a:hover { color: white; text-decoration: none; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 28px; padding-top: 20px;
+    text-align: center; opacity: 0.7; font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-upliftignite.png" alt="Uplift + Ignite Coaching and Consulting"
+           style="height:80px; width:auto; display:block;"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
+      <span style="display:none">Uplift<span style="color:var(--purple-600)">+</span>Ignite</span>
+    </a>
+    <button class="mobile-menu-btn" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#services">Services</a>
+      <a href="dealership.html">Dealerships</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="blog.html">Blog</a>
+      <a href="testimonials.html" class="active">Testimonials</a>
+      <a href="https://calendly.com/upliftplusignite/introductory-meeting" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="eyebrow">What People Say</span>
+    <h1>Testimonials &amp; Reviews</h1>
+    <p>Hear from the leaders, colleagues, and clients who have experienced Stacy's coaching and leadership firsthand.</p>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <h2>Testimonials</h2>
+      <p>Words from those who have worked with Stacy as a coach, mentor, and leader.</p>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="testimonial-text">Stacy is a thoughtful, grounded executive coach who creates instant psychological safety. Even in our short time working together, she has shown an exceptional ability to listen deeply, ask the right questions, and stay fully present with what matters most. She is highly driven, focused, and genuinely invested in her clients' growth, which makes working with her feel both productive and supportive. I would confidently recommend Stacy to anyone looking for a coach who combines sharp insight with real care.</p>
+        <div class="testimonial-author">Jennifer P.</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="testimonial-text">I have interacted with Stacy for the past 10 years and most recently during her coaching class. She is exceptional at listening, acknowledging and observing patterns in people. Her experience and philosophy as a leader are both aligned with the true spirit of coaching. She would be an amazing asset to any leader or organization!!</p>
+        <div class="testimonial-author">Karen C.</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="testimonial-text">Stacy is an incredibly inspiring leader and mentor. Her guidance, encouragement, and belief in me pushed me to grow in ways I never thought possible. I truly would not have the career path or the skills I have today without her support. She leads with integrity, confidence, and heart, and has a rare ability to bring out the best in those around her. I'm deeply grateful for her impact on my professional growth.</p>
+        <div class="testimonial-author">Alexandria B.</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="testimonial-text">Stacy has the unique capability to unlock value from innovation. Stacy is able to move innovation to scale AND implement the required change management required to create value for a large enterprise and the dealer network.</p>
+        <div class="testimonial-author">Brad M.</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="testimonial-text">Stacy is genuine and knowledgeable. With a lengthy career in the Motor City as director, mentor, encourager and leader, coaching is the best place for her to find opportunities to further use her varied talents and expertise in ways to strengthen and promote your career and business. With an attention to detail and the ability to see the big picture, she will lead you to level up your professional development.</p>
+        <div class="testimonial-author">Erin Q.</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="testimonial-text">Stacy is very self aware, and full of integrity. Her compassion and intelligence are admirable. She taught me a lot in life in general. Great leaders like her are flexible and adaptable to all levels of coaching and she nails it.</p>
+        <div class="testimonial-author">Aimee H.</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="testimonial-text">Stacy has the rare ability to lead and coach in times of high stress and difficult challenges. She's able to help team members understand the situation, prioritize decision making and take actionable steps to resolve the matter at hand. She gets buy in from all levels of the organization, from direct reports to the entry level associates on her team. They would follow her anywhere.</p>
+        <div class="testimonial-author">Elizabeth D.</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="testimonial-text">Stacy is a profoundly experienced business leader. Employees speak highly of her personable approach to problem solving and team building. If you are serious about growing your business Stacy can be an invaluable asset.</p>
+        <div class="testimonial-author">Z.</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="testimonial-text">Stacy is one of the very best leaders I have ever worked with. She consistently showed tremendous courage, setting an exemplary example for work ethic and integrity in every aspect of her roles. As my boss and mentor, I feel she brought out the best in me, and I witnessed her do the same for countless individuals across all levels of the organization. Her positive influence extended from entry level employees to corporate executives and beyond the company to suppliers, partners, and customers. I highly endorse Stacy as a coach.</p>
+        <div class="testimonial-author">Tom B.</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="testimonial-text">I have worked with Stacy for most of my 30 years at Ford. As senior leaders in our activity we worked very closely together over the last decade. Stacy is a unique leader in today's business environment as she both believed in and modeled a true people first approach to leadership. Success for Stacy always came through her teams which regarded themselves as part of the family! And because they were all family and had each other's backs, those teams would go the extra mile and accomplish amazing things. Anyone would be blessed to have Stacy as their coach.</p>
+        <div class="testimonial-author">Thayne H.</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="testimonial-text">I worked for and along side Stacey in a variety of roles at Ford Motor Company — she consistently improved the engagement, capacity and personal growth of her direct reports, her wider team, and additional employees outside her organization who she mentored. I would not hesitate to recommend Stacy as a coach for professionals who want to develop or improve their abilities to lead large diverse teams in complex business and/or technical environments.</p>
+        <div class="testimonial-author">George G.</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="testimonial-text">I worked with Stacy for over two decades and saw her build teams, solve complicated issues, and remain calm under immense pressure. She is passionate, has an operational and strategic mindset, and holds herself and others accountable to delivering objectives that exceed our customer's expectations. She cares about people's success beyond her own, and offered council to new employees despite a challenging schedule. Her technical knowledge is beyond reproach. I consider myself extremely lucky to have worked with Stacy.</p>
+        <div class="testimonial-author">Mike D.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ADDITIONAL REVIEWS -->
+<section id="reviews" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>Additional Reviews</h2>
+      <p>More from colleagues and clients who have experienced Stacy's leadership and coaching.</p>
+    </div>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">I've worked along side of Stacy for several years at Ford. High level projects. Stacy has the unique ability to drive and deliver results while at the same time, truly care for people. Great asset for sure!</p>
+        <div class="review-author">Dan H.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Rock star status&hellip;. Stacy is one of the best leaders I worked with at Ford. She is always focused on getting to yes&hellip; regardless of the situation. She leads by example and is focused on developing leaders at all levels. Stacy will be an amazing Coach and any one that works with her is super lucky.</p>
+        <div class="review-author">Andrew A.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">I worked with Stacy for over a decade, and I recommend her as a steady, wise, and optimistic leader. She helps people shine brightly, and her team adored her. Her business acumen is deep, and I remember many times where I asked her for guidance, which I always appreciated.</p>
+        <div class="review-author">Becca A.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">I worked alongside Stacy for 10 years, she is not only a leader who understands how to support her teams but also helps the people become better leaders that are positioned above her. In other words she leads without being a manager. She also is durable, incredibly flexible and open to others. She has been challenged in her career and her personal life and can bring people up because she has overcome tough situations with professionalism and love. Stacy is a great selection to join your team she will bring people up and make them better people from the time they spend with her.</p>
+        <div class="review-author">Eric C.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">I had the privilege of working with Stacy on high profile projects and witnessing in first hand her exceptional skills in leading diverse technical teams, delivering results with integrity, while treating everyone with respect.</p>
+        <div class="review-author">Michelle Z.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Stacy is smart, kind, funny and thrives on serving/supporting others! She is an incredibly strong, resilient woman. I have known Stacy for 30 years&hellip;she posses strong family values and during her career at Ford, it was evident that she leaned into those values, creating a "family" within the successful organization she helped lead.</p>
+        <div class="review-author">Kristin F.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Stacy was a strong leader at Ford. She always sought out diverse opinions before making decisions. She has an abundance of experience and knowledge to draw upon in any situation. And Stacy is a genuinely nice person, too.</p>
+        <div class="review-author">Robert T.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Stacy was a supervisor at Ford Motor Company so I had regular interactions with her. Stacy was professional in all my dealings. What I appreciated most was her sincere desire to develop people. I felt heard in my meetings and respected for my opinions.</p>
+        <div class="review-author">Kirk L.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">I have spoken and discussed fixed operations and leadership training needs and strategies with Stacy Balzer in the past, when she was a Senior Director, in Service Engineering Operations with Ford Motor Company, and since she has started her Leadership Consulting Company, Uplift + Ignite Coaching and Consulting. As a former Fixed Operations Manager at Ford and Lincoln Mercury Dealerships, as well as a Fixed Operations Consultant and Trainer since 1998. Stacy Balzer is one of the most experienced leadership training professionals I have worked with in a long time.</p>
+        <div class="review-author">John D.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">I had the pleasure of working with Stacy off and on most of my career. Her natural ability to coach and mentor others created an environment where people felt supported, challenged and empowered to grow. Stacy's influence elevated the performance and confidence of everyone around her. The positive culture she helped to build will continue to benefit our organization long after her retirement. It was an honor to work and learn from her.</p>
+        <div class="review-author">Paul G.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">I had the honor of being coached by Stacy and found it to be a fulfilling and enriching experience as a leader and business manager!</p>
+        <div class="review-author">Cristiano A.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">I had the pleasure of working under Stacy's leadership for most of my career. She is energetic and enthusiastic about leading people to grow in their careers. She has helped so many become the best they can within our industry. Working with or for Stacy is a privilege because she deeply cares for her people and shares knowledge with everyone.</p>
+        <div class="review-author">Jeff W.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Stacy was one of the strongest leaders I had the pleasure to work with at Ford. She consistently gave her people the tools to succeed and grow. She was motivational, asked relevant questions, and truly cared for the people she worked with.</p>
+        <div class="review-author">Larry C.</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">I spoke with Stacy about the business that I'm growing. She was very energetic, enthusiastic, and helpful even in our first meeting. I'm looking forward to the continued relationship and learning more from her as we grow!</p>
+        <div class="review-author">Jim E.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="container">
+    <h2>Ready to experience it for yourself?</h2>
+    <p>Start with a free 30-minute discovery call. No pressure, no script — just a conversation about what's in front of you.</p>
+    <a href="https://calendly.com/upliftplusignite/introductory-meeting" target="_blank" rel="noopener" class="btn btn-primary">Book a Call</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <img src="assets/logo-upliftignite.png" alt="Uplift + Ignite" style="height:80px; width:auto; margin-bottom:6px; display:block; background:white; padding:6px; border-radius:4px;"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <div class="brand" style="display:none">Uplift<span>+</span>Ignite</div>
+        <div style="margin-top: 4px; font-size: 13px; opacity: 0.8;">Coaching and Consulting · Stacy Balzer</div>
+      </div>
+      <div class="footer-social">
+        <a href="mailto:upliftplusignite@gmail.com">Email</a>
+        <a href="https://www.instagram.com/upliftplusignite" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Uplift + Ignite Coaching and Consulting. Encourage Boldly. Propel Execution. Spark Impact.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
