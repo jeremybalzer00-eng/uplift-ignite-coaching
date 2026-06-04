@@ -126,28 +126,29 @@
   .page-hero p { font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto; }
 
   /* SECTIONS */
-  section { padding: 72px 0; }
+  section { padding: 56px 0; }
   section.alt { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .section-head { max-width: 720px; margin: 0 auto 52px; text-align: center; }
-  .section-head h2 { font-size: clamp(26px, 3vw, 38px); margin-bottom: 12px; }
+  .section-head { max-width: 720px; margin: 0 auto 36px; text-align: center; }
+  .section-head h2 { font-size: clamp(26px, 3vw, 38px); margin-bottom: 0; }
   .section-head p { font-size: 16px; color: var(--muted); }
 
-  /* TESTIMONIAL CARDS — 2-column grid */
+  /* TESTIMONIAL CARDS — 3-column grid */
   .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
-  @media (max-width: 640px) { .testimonials-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .testimonials-grid { grid-template-columns: 1fr; } }
 
   .testimonial-card {
     background: white;
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 32px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   }
   .testimonial-card:hover {
@@ -157,23 +158,23 @@
   }
   .quote-mark {
     font-family: 'Fraunces', serif;
-    font-size: 64px;
+    font-size: 48px;
     line-height: 0.6;
     color: var(--purple-500);
     opacity: 0.35;
     user-select: none;
   }
   .testimonial-text {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--ink);
-    line-height: 1.75;
+    line-height: 1.65;
     flex-grow: 1;
   }
   .testimonial-author {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--purple-800);
-    padding-top: 12px;
+    padding-top: 10px;
     border-top: 1px solid var(--border);
   }
 
@@ -190,10 +191,10 @@
     background: var(--purple-50);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 24px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   }
   .review-card:hover {
@@ -209,14 +210,14 @@
   .review-text {
     font-size: 14px;
     color: var(--ink);
-    line-height: 1.7;
+    line-height: 1.6;
     flex-grow: 1;
   }
   .review-author {
     font-size: 13px;
     font-weight: 600;
     color: var(--purple-800);
-    padding-top: 10px;
+    padding-top: 8px;
     border-top: 1px solid var(--border);
   }
 
@@ -226,7 +227,7 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
-    margin-top: 44px;
+    margin-top: 32px;
   }
   .pag-btn {
     width: 44px; height: 44px;
@@ -355,7 +356,6 @@
   <div class="container">
     <div class="section-head">
       <h2>Testimonials</h2>
-      <p>Words from those who have worked with Stacy as a coach, mentor, and leader.</p>
     </div>
 
     <div class="testimonials-grid" id="testimonialsGrid">
@@ -448,7 +448,6 @@
   <div class="container">
     <div class="section-head">
       <h2>Additional Reviews</h2>
-      <p>More from colleagues and clients who have experienced Stacy's leadership and coaching.</p>
     </div>
 
     <div class="reviews-grid" id="reviewsGrid">
