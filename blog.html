@@ -88,7 +88,7 @@
 
   /* HERO */
   .page-hero {
-    padding: 64px 0 72px;
+    padding: 40px 0 48px;
     background:
       radial-gradient(ellipse at top right, rgba(155, 111, 212, 0.15), transparent 60%),
       radial-gradient(ellipse at bottom left, rgba(91, 52, 148, 0.08), transparent 60%),
@@ -126,7 +126,7 @@
   .li-follow-btn svg { width: 18px; height: 18px; fill: white; flex-shrink: 0; }
 
   /* RIGHT COLUMN CARDS */
-  .hero-right { display: flex; flex-direction: column; gap: 16px; }
+  .hero-right { display: flex; flex-direction: column; justify-content: center; }
 
   /* Profile card */
   .profile-card {
@@ -135,12 +135,11 @@
   }
   .about-avatar {
     width: 80px; height: 80px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--purple-500), var(--purple-800));
-    margin: 0 auto 14px; display: flex; align-items: center; justify-content: center;
-    font-family: 'Fraunces', serif; font-size: 28px; color: white; font-weight: 700;
+    background: var(--border);
+    margin: 0 auto 14px;
     overflow: hidden;
   }
-  .about-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .about-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
   .profile-card p {
     font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.65;
   }
@@ -152,16 +151,6 @@
   }
   .li-follow-btn-full:hover { background: #005f93; text-decoration: none; }
   .li-follow-btn-full svg { width: 16px; height: 16px; fill: white; }
-
-  /* Notification card */
-  .notify-card {
-    background: var(--purple-900);
-    border-radius: 14px; padding: 24px;
-  }
-  .notify-card p {
-    font-size: 15px; color: rgba(255,255,255,0.85);
-    margin-bottom: 16px; line-height: 1.65;
-  }
 
   /* TOPICS STRIP */
   .topics-strip {
@@ -252,13 +241,9 @@
 
         <div class="profile-card">
           <div class="about-avatar">
-            <img src="assets/LI_headshot.jpg" alt="Stacy Balzer" onerror="this.style.display='none'">SB
+            <img src="assets/LI_headshot.jpg" alt="Stacy Balzer">
           </div>
           <p>Stacy Balzer — former Ford Senior Director, executive coach, and dealer consultant. Posts weekly on LinkedIn about leadership, team performance, and dealership operations.</p>
-        </div>
-
-        <div class="notify-card">
-          <p>New posts and videos every week. Follow on LinkedIn to get notified the moment they go live.</p>
         </div>
 
       </div>
