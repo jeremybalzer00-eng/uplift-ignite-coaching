@@ -146,11 +146,12 @@
     color: var(--navy); font-weight: 700; line-height: 1.15; margin-bottom: 10px;
   }
   .vmpi-headline em { font-style: italic; color: var(--orange); font-weight: 600; }
-  .vmpi-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: start; }
+  .vmpi-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: stretch; }
   .vmpi-opportunity {
     background: var(--navy);
     border-radius: 14px; padding: 32px; color: white;
     border-top: 4px solid var(--orange);
+    height: 100%;
   }
   .vmpi-opportunity h3 {
     font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 800;
@@ -191,7 +192,7 @@
     font-family: 'Fraunces', serif; font-size: 20px; font-style: italic;
     color: white; margin-bottom: 6px; line-height: 1.4;
   }
-  .vmpi-promise p:last-of-type { font-size: 16px; color: rgba(255,255,255,0.75); margin-bottom: 20px; font-style: normal; font-family: 'Inter', sans-serif; }
+  .vmpi-promise p:last-of-type { font-size: 16px; color: rgba(255,255,255,0.75); margin-bottom: 0; font-style: normal; font-family: 'Inter', sans-serif; }
   .btn-orange { background: var(--orange); color: white; border-color: var(--orange); }
   .btn-orange:hover { background: #c95e10; text-decoration: none; transform: translateY(-1px); }
   @media (max-width: 900px) { .vmpi-layout { grid-template-columns: 1fr; } }
@@ -633,6 +634,8 @@
         </div>
         <div class="vmpi-promise">
           <p>We Don't Launch and Leave.<br>We Partner and Sustain.</p>
+        </div>
+        <div style="text-align: center; margin-top: 16px;">
           <a href="https://calendly.com/upliftplusignite/introductory-meeting" target="_blank" rel="noopener" class="btn btn-orange">Learn More About Video MPI Solutions</a>
         </div>
       </div>
