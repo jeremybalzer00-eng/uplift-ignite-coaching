@@ -35,7 +35,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
   body {
     font-family: 'Inter', -apple-system, sans-serif;
@@ -111,7 +111,7 @@
 
   /* HERO */
   .hero {
-    padding: 44px 0 36px;
+    padding: 36px 0 28px;
     background:
       radial-gradient(ellipse at top right, rgba(155, 111, 212, 0.15), transparent 60%),
       radial-gradient(ellipse at bottom left, rgba(91, 52, 148, 0.08), transparent 60%),
@@ -171,9 +171,9 @@
   }
 
   /* SECTIONS */
-  section { padding: 52px 0; }
+  section { padding: 40px 0; }
   section.alt { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .section-head { max-width: 720px; margin: 0 auto 36px; text-align: center; }
+  .section-head { max-width: 720px; margin: 0 auto 28px; text-align: center; }
   .section-head .eyebrow { display: block; }
   .section-head h2 { font-size: clamp(30px, 3.5vw, 44px); margin-bottom: 16px; }
   .section-head p { font-size: 17px; color: var(--muted); }
@@ -227,7 +227,7 @@
   /* WHY STACY BAND */
   .why-band {
     background: linear-gradient(135deg, var(--purple-900) 0%, var(--purple-800) 100%);
-    padding: 52px 0; color: white; position: relative; overflow: hidden;
+    padding: 40px 0; color: white; position: relative; overflow: hidden;
   }
   .why-band::before {
     content: ''; position: absolute; inset: 0;
@@ -328,7 +328,7 @@
   /* CTA BAND */
   .cta-band {
     background: linear-gradient(135deg, var(--purple-800) 0%, var(--purple-600) 100%);
-    color: white; padding: 52px 0; text-align: center;
+    color: white; padding: 40px 0; text-align: center;
     position: relative; overflow: hidden;
   }
   .cta-band::before {
