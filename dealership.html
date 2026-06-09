@@ -244,25 +244,23 @@
   /* WHY CLEARPATH SECTION */
   .why-section {
     padding: 40px 0;
-    background: white;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, #0f2044 0%, #e8721a 100%);
   }
   .why-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: center; max-width: 1000px; margin: 0 auto; }
   .why-label {
     font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 800;
     text-transform: uppercase; letter-spacing: 0.16em;
-    color: var(--orange); margin-bottom: 18px;
+    color: rgba(255,255,255,0.7); margin-bottom: 18px;
   }
-  .why-inner h2 { font-size: clamp(26px, 3vw, 36px); color: var(--navy); margin-bottom: 0; }
-  .why-body p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+  .why-inner h2 { font-size: clamp(26px, 3vw, 36px); color: white; margin-bottom: 0; }
+  .why-body p { font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.75; margin-bottom: 16px; }
   .why-body p:last-child { margin-bottom: 0; }
   .why-challenges {
     display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px;
   }
   .challenge-tag {
-    font-size: 13px; font-weight: 600; color: var(--navy);
-    background: var(--purple-100); border-radius: 6px;
+    font-size: 13px; font-weight: 600; color: white;
+    background: rgba(255,255,255,0.15); border-radius: 6px;
     padding: 6px 14px;
   }
   @media (max-width: 860px) { .why-inner { grid-template-columns: 1fr; gap: 32px; } }
