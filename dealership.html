@@ -236,7 +236,17 @@
 
   /* SECTIONS */
   section { padding: 40px 0; }
-  section.alt { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  section.alt { background: var(--navy); border-top: none; border-bottom: none; }
+  section.alt .eyebrow { color: var(--orange); }
+  section.alt .section-head h2 { color: white; }
+  section.alt .section-head p { color: rgba(255,255,255,0.75); }
+  section.alt .pillar-card { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); }
+  section.alt .pillar-card:hover { border-color: var(--orange); box-shadow: 0 12px 32px rgba(232,114,26,0.15); }
+  section.alt .pillar-card h3 { color: white; }
+  section.alt .pillar-card .pillar-tagline { color: var(--orange-light); }
+  section.alt .pillar-card p { color: rgba(255,255,255,0.75); }
+  section.alt .pillar-card ul li { color: rgba(255,255,255,0.85); }
+  section.alt .pillar-card ul li::before { color: var(--orange); }
   .section-head { max-width: 720px; margin: 0 auto 28px; text-align: center; }
   .section-head h2 { font-size: clamp(28px, 3.5vw, 40px); margin-bottom: 16px; }
   .section-head p { font-size: 17px; color: var(--muted); }
