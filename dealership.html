@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dealership Productivity Consulting | Uplift + Ignite</title>
-<meta name="description" content="Hands-on dealership productivity consulting from Stacy Balzer — fixed operations, service efficiency, technician training, and customer retention expertise built over 30 years at Ford Motor Company.">
+<title>ClearPath Dealer Solutions | Leadership, Communication & Fixed Operations Consulting</title>
+<meta name="description" content="ClearPath Dealer Solutions helps dealerships improve performance through leadership development, team communication, and fixed operations consulting. Thirty years of automotive leadership experience.">
 <meta name="author" content="Stacy Balzer">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -210,9 +210,15 @@
     color: var(--purple-700); margin-bottom: 18px;
     display: block;
   }
-  .page-hero h1 { font-size: clamp(36px, 4.5vw, 56px); color: var(--ink); margin-bottom: 20px; max-width: 760px; }
+  .page-hero h1 { font-size: clamp(36px, 4.5vw, 56px); color: var(--ink); margin-bottom: 12px; max-width: 760px; }
   .page-hero h1 em { font-style: italic; color: var(--purple-700); font-weight: 400; }
-  .page-hero .lead { font-size: 18px; color: var(--muted); max-width: 640px; margin-bottom: 32px; }
+  .page-hero .subtitle { font-size: 20px; color: var(--muted); max-width: 680px; margin-bottom: 20px; font-weight: 400; line-height: 1.5; }
+  .page-hero .lead { font-size: 17px; color: var(--muted); max-width: 640px; margin-bottom: 10px; }
+  .page-hero .tagline {
+    font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--orange); margin-bottom: 32px;
+  }
 
   .btn {
     display: inline-block; padding: 14px 26px;
@@ -234,6 +240,32 @@
   .section-head h2 { font-size: clamp(28px, 3.5vw, 40px); margin-bottom: 16px; }
   .section-head p { font-size: 17px; color: var(--muted); }
 
+  /* WHY CLEARPATH SECTION */
+  .why-section {
+    padding: 72px 0;
+    background: white;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .why-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: center; max-width: 1000px; margin: 0 auto; }
+  .why-label {
+    font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--orange); margin-bottom: 18px;
+  }
+  .why-inner h2 { font-size: clamp(26px, 3vw, 36px); color: var(--navy); margin-bottom: 0; }
+  .why-body p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+  .why-body p:last-child { margin-bottom: 0; }
+  .why-challenges {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px;
+  }
+  .challenge-tag {
+    font-size: 13px; font-weight: 600; color: var(--navy);
+    background: var(--purple-100); border-radius: 6px;
+    padding: 6px 14px;
+  }
+  @media (max-width: 860px) { .why-inner { grid-template-columns: 1fr; gap: 32px; } }
+
   /* PILLARS GRID */
   .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .pillar-card {
@@ -254,6 +286,7 @@
     margin-bottom: 20px; font-size: 24px;
   }
   .pillar-card h3 { font-size: 20px; margin-bottom: 10px; }
+  .pillar-card .pillar-tagline { font-size: 15px; color: var(--muted); margin-bottom: 14px; font-style: italic; }
   .pillar-card p { color: var(--muted); font-size: 15px; margin-bottom: 14px; }
   .pillar-card ul { list-style: none; }
   .pillar-card ul li {
@@ -265,6 +298,31 @@
     color: var(--purple-600); font-weight: 700;
   }
   @media (max-width: 900px) { .pillars-grid { grid-template-columns: 1fr; } }
+
+  /* WHO WE HELP SECTION */
+  .who-section { padding: 80px 0; background: var(--cream); }
+  .who-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .who-card {
+    background: white; border: 1px solid var(--border);
+    border-radius: 12px; padding: 36px;
+  }
+  .who-card h3 { font-size: 22px; color: var(--navy); margin-bottom: 20px; }
+  .who-card ul { list-style: none; }
+  .who-card ul li {
+    font-size: 15px; color: var(--ink);
+    padding: 7px 0 7px 24px; position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .who-card ul li:last-child { border-bottom: none; }
+  .who-card ul li::before {
+    content: '•'; position: absolute; left: 0;
+    color: var(--orange); font-weight: 700; font-size: 18px; top: 5px;
+  }
+  .challenges-card ul li::before {
+    content: '✓'; font-size: 14px; top: 7px;
+    color: var(--purple-600);
+  }
+  @media (max-width: 760px) { .who-inner { grid-template-columns: 1fr; } }
 
   /* EXPERIENCE BAND */
   .experience-band {
@@ -313,7 +371,7 @@
   }
   .cta-band > * { position: relative; z-index: 1; }
   .cta-band h2 { font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 16px; color: white; }
-  .cta-band p { font-size: 18px; margin-bottom: 28px; opacity: 0.9; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .cta-band p { font-size: 18px; margin-bottom: 28px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
   .cta-band .btn-primary { background: white; color: var(--purple-800); }
   .cta-band .btn-primary:hover { background: var(--cream); }
 
@@ -421,63 +479,95 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="page-hero">
   <div class="container">
-    <span class="eyebrow">ClearPath Dealer Solutions · Dealership Productivity Consulting</span>
-    <h1>Turn your fixed ops into a <em>competitive advantage.</em></h1>
-    <p class="lead">Thirty years running service operations at one of the world's largest automakers — now applied directly to your dealership's toughest productivity and retention challenges. Defined process. Confident people. Measurable results.</p>
-    <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-      <a href="https://calendly.com/upliftplusignite/introductory-meeting" target="_blank" rel="noopener" class="btn btn-primary">Request a Consultation</a>
-      <a href="#vmpi" class="btn btn-secondary">See Video MPI Solutions</a>
+    <h1>ClearPath Dealer Solutions</h1>
+    <p class="subtitle">Helping dealerships improve performance through leadership, communication, and execution.</p>
+    <p class="lead">Thirty years of automotive leadership experience helping dealerships strengthen teams, improve fixed operations, and drive sustainable results.</p>
+    <p class="tagline">Defined process. Confident people. Measurable results.</p>
+    <a href="https://calendly.com/upliftplusignite/introductory-meeting" target="_blank" rel="noopener" class="btn btn-primary">Schedule a Consultation</a>
+  </div>
+</div>
+
+<!-- WHY CLEARPATH -->
+<div class="why-section">
+  <div class="container">
+    <div class="why-inner">
+      <div>
+        <p class="why-label">Why ClearPath</p>
+        <h2>Dealership Performance Starts with People</h2>
+      </div>
+      <div class="why-body">
+        <p>Most dealership performance challenges aren't solved by technology alone. Sustainable results happen when leaders are aligned, teams communicate effectively, and processes are executed consistently.</p>
+        <p>Whether you're struggling with technician retention, inconsistent execution, team communication, leadership effectiveness, or Video MPI adoption, we help create practical solutions that drive measurable improvement.</p>
+        <div class="why-challenges">
+          <span class="challenge-tag">Technician Retention</span>
+          <span class="challenge-tag">Inconsistent Execution</span>
+          <span class="challenge-tag">Team Communication</span>
+          <span class="challenge-tag">Leadership Effectiveness</span>
+          <span class="challenge-tag">Video MPI Adoption</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- THREE WAYS WE IMPROVE PERFORMANCE -->
 <section id="services" class="alt">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Three Ways We Work Together</span>
-      <h2>Three ways we move the needle for your dealership.</h2>
-      <p>Engagements are scoped to your situation — diagnostic, project-based, or ongoing advisory.</p>
+      <span class="eyebrow">Three Ways We Improve Performance</span>
+      <h2>Engagements are customized to your dealership's needs.</h2>
+      <p>Diagnostic, project-based, or ongoing advisory support — scoped to your situation.</p>
     </div>
     <div class="pillars-grid">
 
       <div class="pillar-card">
-        <div class="pillar-icon">💬</div>
-        <h3>Dealership Communication &amp; Team Effectiveness</h3>
-        <p>Breakdowns between service advisors, technicians, managers, and customers cost you revenue every day. We build the communication systems and team culture that keep everyone aligned and performing.</p>
+        <div class="pillar-icon">🧭</div>
+        <h3>Leadership Development &amp; Coaching</h3>
+        <p class="pillar-tagline">Strong dealerships are built by strong leaders.</p>
+        <p>Your managers influence communication, accountability, engagement, retention, and performance every day. We help dealership leaders build the confidence, skills, and leadership discipline needed to create high-performing teams.</p>
         <ul>
-          <li>Communication audit &amp; gap analysis</li>
-          <li>Cross-department alignment workshops</li>
-          <li>Manager accountability &amp; feedback loops</li>
-          <li>DISC Workplace Communication Certification</li>
-          <li>Conflict resolution &amp; team trust-building</li>
+          <li>Executive &amp; leadership coaching</li>
+          <li>New manager development</li>
+          <li>Perspective360 leadership feedback</li>
+          <li>Leadership communication coaching</li>
+          <li>Accountability and performance conversations</li>
+          <li>Succession and growth planning</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">💬</div>
+        <h3>Team Communication &amp; Effectiveness</h3>
+        <p class="pillar-tagline">Better communication. Better decisions. Better outcomes.</p>
+        <p>Most dealership performance problems aren't process problems—they're communication problems. When leaders, advisors, technicians, and departments aren't aligned, productivity suffers, turnover rises, and customers feel it.</p>
+        <ul>
+          <li>DiSC Workplace assessments</li>
+          <li>Team communication workshops</li>
+          <li>Cross-functional alignment sessions</li>
+          <li>Leadership communication coaching</li>
+          <li>Manager feedback systems</li>
+          <li>Team trust and effectiveness development</li>
+          <li>Conflict resolution and accountability frameworks</li>
         </ul>
       </div>
 
       <div class="pillar-card">
         <div class="pillar-icon">⚙️</div>
-        <h3>Fixed Operations Productivity</h3>
-        <p>Fixed ops is your most consistent profit center — when it's running right. We diagnose what's slowing you down and redesign the workflows, staffing, and systems that drive throughput and retention.</p>
+        <h3>Fixed Operations Performance</h3>
+        <p class="pillar-tagline">Improve productivity, throughput, and profitability.</p>
+        <p>Fixed operations is your most consistent profit center—when it's running well. We identify bottlenecks, streamline processes, and improve execution so your team can serve more customers without sacrificing quality.</p>
         <ul>
-          <li>Technician efficiency &amp; productivity benchmarking</li>
-          <li>Service advisor workflow &amp; capacity analysis</li>
-          <li>Appointment scheduling &amp; digital intake</li>
-          <li>Recall &amp; warranty process efficiency</li>
-          <li>EV &amp; connected vehicle service readiness</li>
-        </ul>
-      </div>
-
-      <div class="pillar-card">
-        <div class="pillar-icon">🎥</div>
-        <h3>Video Multi-Point Inspection</h3>
-        <p>77% of customers have never experienced Video MPI — and dealers who execute it well see 35–60% more revenue per RO and +31 J.D. Power CSI points. We get you there and make sure it sticks.</p>
-        <ul>
-          <li>Right-fit tool &amp; process strategy</li>
-          <li>30-day activation &amp; adoption program</li>
-          <li>Technician &amp; advisor training</li>
-          <li>Sustainment &amp; accountability systems</li>
-          <li>Revenue impact tracking</li>
+          <li>Technician productivity and efficiency analysis</li>
+          <li>Technician retention and engagement strategies</li>
+          <li>Advisor workflow and capacity optimization</li>
+          <li>Service process improvement</li>
+          <li>Scheduling and shop capacity planning</li>
+          <li>Recall and warranty process efficiency</li>
+          <li>EV and connected vehicle readiness</li>
+          <li>Video MPI implementation and adoption</li>
         </ul>
       </div>
 
@@ -485,14 +575,16 @@
   </div>
 </section>
 
+<!-- FEATURED SOLUTION: VIDEO MPI -->
 <section class="vmpi-section" id="vmpi">
   <div class="container">
     <div class="vmpi-header">
-      <p class="vmpi-kicker">Video MPI Solutions</p>
+      <p class="vmpi-kicker">Featured Solution · Video MPI Solutions</p>
       <h2 class="vmpi-headline">
         No Video MPI? Not Seeing Results?<br>
         <em>It's Time. &nbsp; It's Execution.</em>
       </h2>
+      <p style="font-size:16px; color:var(--muted); max-width:560px; margin:0 auto;">77% of customers have never experienced Video MPI, creating a significant opportunity for dealerships willing to execute consistently.</p>
     </div>
     <div class="vmpi-layout">
       <div>
@@ -500,15 +592,15 @@
           <h3>The Video Opportunity</h3>
           <div class="vmpi-stat">
             <div class="num"><em>77%</em></div>
-            <p>of customers have not experienced Video MPI — it's a massive differentiator hiding in plain sight.</p>
+            <p>Customers who have not experienced Video MPI</p>
           </div>
           <div class="vmpi-stat">
             <div class="num"><em>35–60%</em></div>
-            <p>more revenue per repair order when Video MPI is implemented with proper process and adoption.</p>
+            <p>Increase in revenue per repair order</p>
           </div>
           <div class="vmpi-stat">
-            <div class="num"><em>+31 pts</em></div>
-            <p>J.D. Power CSI lift reported by dealers with consistent Video MPI execution.</p>
+            <div class="num"><em>+31</em></div>
+            <p>J.D. Power CSI point improvement</p>
           </div>
         </div>
       </div>
@@ -519,7 +611,7 @@
             <div>
               <h4>Right-Fit Strategy</h4>
               <div class="sub">Tool + Process Alignment</div>
-              <p>Not every Video MPI tool is the right fit for your store. We assess your current process, team, and DMS environment to identify the right solution — then build the workflow around it.</p>
+              <p>Not every Video MPI solution is right for every dealership. We evaluate your goals, team, workflow, and technology environment to identify the best fit and create a process that supports adoption.</p>
             </div>
           </div>
           <div class="vmpi-solution">
@@ -527,7 +619,7 @@
             <div>
               <h4>30-Day Activation</h4>
               <div class="sub">Drive Adoption Fast</div>
-              <p>Launch isn't success — adoption is. Our 30-day activation program gets technicians and advisors using Video MPI consistently, with the coaching cadence to make it stick.</p>
+              <p>Launch isn't success—adoption is. Our activation program helps technicians, advisors, and leaders establish the habits and accountability necessary for long-term success.</p>
             </div>
           </div>
           <div class="vmpi-solution">
@@ -535,86 +627,125 @@
             <div>
               <h4>Sustainment</h4>
               <div class="sub">Ensure It Sticks</div>
-              <p>Most programs fail at 60 days when attention moves on. Our sustainment model keeps execution high through metrics reviews, manager coaching, and ongoing accountability loops.</p>
+              <p>Most programs fail after the initial excitement fades. Through coaching, metrics reviews, leadership accountability, and ongoing support, we help ensure results continue long after launch.</p>
             </div>
           </div>
         </div>
         <div class="vmpi-promise">
-          <p>"We don't launch and leave.<br>We partner and sustain."</p>
-          <p>Let's Fix It. 15 Minutes. Real Clarity.</p>
-          <a href="https://calendly.com/upliftplusignite/introductory-meeting" target="_blank" rel="noopener" class="btn btn-orange">Schedule a 15-Minute Call</a>
+          <p>We Don't Launch and Leave.<br>We Partner and Sustain.</p>
+          <a href="https://calendly.com/upliftplusignite/introductory-meeting" target="_blank" rel="noopener" class="btn btn-orange">Learn More About Video MPI Solutions</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- WHO WE HELP -->
+<div class="who-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Who We Help</span>
+      <h2>Built for Dealership Leaders</h2>
+    </div>
+    <div class="who-inner">
+      <div class="who-card">
+        <h3>We work with:</h3>
+        <ul>
+          <li>Dealer Principals</li>
+          <li>General Managers</li>
+          <li>Fixed Operations Directors</li>
+          <li>Service Managers</li>
+          <li>Parts Managers</li>
+          <li>Multi-Store Dealer Groups</li>
+        </ul>
+      </div>
+      <div class="who-card challenges-card">
+        <h3>Common Challenges We Help Solve</h3>
+        <ul>
+          <li>Technician retention</li>
+          <li>Advisor performance</li>
+          <li>Team communication</li>
+          <li>Leadership development</li>
+          <li>Accountability and culture</li>
+          <li>Process execution</li>
+          <li>Service capacity constraints</li>
+          <li>Video MPI adoption</li>
+          <li>Fixed operations productivity</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY STACY -->
 <div class="experience-band">
   <div class="container">
     <div class="experience-inner">
       <div class="exp-stats">
         <div class="exp-stat">
           <div class="num">30+</div>
-          <div class="label">Years at Ford Motor Company</div>
+          <div class="label">Years of Automotive Leadership</div>
         </div>
         <div class="exp-divider"></div>
         <div class="exp-stat">
-          <div class="num">1,100+</div>
-          <div class="label">Global employees led</div>
+          <div class="num">3,000+</div>
+          <div class="label">Dealerships Supported Through Ford Programs</div>
         </div>
         <div class="exp-divider"></div>
         <div class="exp-stat">
-          <div class="num">10k+</div>
-          <div class="label">Dealerships impacted through field programs</div>
+          <div class="num">50,000+</div>
+          <div class="label">Technicians Impacted Across North America</div>
         </div>
       </div>
       <div class="exp-body">
-        <h2>This isn't consulting theory. It's thirty years of operating reality.</h2>
-        <p>As Operating Director of Service Engineering Operations at Ford, I oversaw recall execution, warranty operations, technical training, and connected-vehicle service readiness across the entire North American dealer network. I know what good looks like — and I know what gets in the way.</p>
-        <p>I pioneered Ford's Voice of Customer strategy for service, led the fixed-ops conversion for electric and autonomous vehicles, and turned around service organizations that had stalled under complexity and scale. Every recommendation I make has been pressure-tested in the real world.</p>
-        <p>When I work with your dealership, you get the same problem-solving approach I used to move multi-billion-dollar programs — applied to your specific situation, your team, and your market.</p>
+        <h2>Real-World Experience. Practical Solutions.</h2>
+        <p>For more than 30 years at Ford Motor Company, I worked directly with dealership service operations across North America—supporting technician development, service engineering, recall execution, customer satisfaction, mobile service, and emerging vehicle technologies.</p>
+        <p>I understand the realities dealership leaders face because I've spent my career helping solve them.</p>
+        <p>Today, I bring that experience directly to dealerships through consulting, leadership coaching, team effectiveness programs, and Video MPI implementation.</p>
+        <p>Every recommendation is grounded in real-world experience, practical application, and measurable results.</p>
       </div>
     </div>
   </div>
 </div>
 
+<!-- HOW WE WORK -->
 <section>
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">How It Works</span>
-      <h2>From first call to lasting change</h2>
-      <p>A simple, four-step process that respects your time and gets to results fast.</p>
+      <span class="eyebrow">How We Work</span>
+      <h2>From First Conversation to Lasting Change</h2>
     </div>
     <div class="process-steps">
       <div class="process-step">
         <div class="step-num">01</div>
         <h3>Discovery Call</h3>
-        <p>A free 30-minute conversation about your dealership's situation, goals, and the challenges getting in the way. No prep required.</p>
+        <p>A focused conversation about your dealership, your goals, and your biggest opportunities.</p>
       </div>
       <div class="process-step">
         <div class="step-num">02</div>
         <h3>On-Site Assessment</h3>
-        <p>I come to you. Walkthroughs, team interviews, and data review to get a clear picture of what's actually happening versus what the reports say.</p>
+        <p>Observation, team interviews, process review, and operational analysis to understand what is really happening.</p>
       </div>
       <div class="process-step">
         <div class="step-num">03</div>
         <h3>Action Plan</h3>
-        <p>A prioritized, plain-language roadmap your team can own — quick wins for momentum and structural changes for the long term.</p>
+        <p>A practical roadmap with prioritized recommendations, quick wins, and longer-term opportunities.</p>
       </div>
       <div class="process-step">
         <div class="step-num">04</div>
         <h3>Implementation Support</h3>
-        <p>Ongoing advisory as you execute — available for questions, progress check-ins, and course corrections as conditions change.</p>
+        <p>Coaching, accountability, and ongoing support to help your team execute and sustain results.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FINAL CTA -->
 <div class="cta-band">
   <div class="container">
-    <h2>Ready to move your fixed ops from cost center to profit driver?</h2>
-    <p>Start with a free 30-minute discovery call. No pressure, no pitch deck — just an honest conversation about where you are and where you want to go.</p>
-    <a href="#contact" class="btn btn-primary">Request a Consultation</a>
+    <h2>Better Leadership.<br>Better Communication.<br>Better Results.</h2>
+    <p>Whether you're focused on leadership development, team effectiveness, fixed operations performance, or Video MPI execution, let's start with a conversation about where you are and where you want to go.</p>
+    <a href="https://calendly.com/upliftplusignite/introductory-meeting" target="_blank" rel="noopener" class="btn btn-primary">Schedule a Consultation</a>
   </div>
 </div>
 
@@ -680,10 +811,10 @@
           <label for="interest">What are you working on? *</label>
           <select id="interest" name="interest" required>
             <option value="">Please select…</option>
-            <option value="Fixed Operations Diagnostics">Fixed Operations Diagnostics</option>
-            <option value="Service Process Redesign">Service Process Redesign</option>
-            <option value="Technician Recruiting & Training">Technician Recruiting &amp; Training</option>
-            <option value="Customer Retention Strategy">Customer Retention Strategy</option>
+            <option value="Leadership Development & Coaching">Leadership Development &amp; Coaching</option>
+            <option value="Team Communication & Effectiveness">Team Communication &amp; Effectiveness</option>
+            <option value="Fixed Operations Performance">Fixed Operations Performance</option>
+            <option value="Video MPI Implementation">Video MPI Implementation</option>
             <option value="Not sure yet">Not sure yet — let's explore</option>
           </select>
         </div>
