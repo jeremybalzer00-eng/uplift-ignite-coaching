@@ -86,135 +86,112 @@
     .mobile-menu-btn { display: block; }
   }
 
-  /* PAGE HERO */
+  /* HERO */
   .page-hero {
-    padding: 56px 0 44px;
+    padding: 64px 0 72px;
     background:
       radial-gradient(ellipse at top right, rgba(155, 111, 212, 0.15), transparent 60%),
       radial-gradient(ellipse at bottom left, rgba(91, 52, 148, 0.08), transparent 60%),
       var(--cream);
     border-bottom: 1px solid var(--border);
   }
-  .eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--purple-700); margin-bottom: 14px; display: block; }
-  .page-hero h1 { font-size: clamp(28px, 3.5vw, 44px); margin-bottom: 14px; max-width: 640px; }
-  .page-hero .lead { font-size: 17px; color: var(--muted); max-width: 580px; margin-bottom: 24px; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 56px;
+    align-items: center;
+  }
+  .eyebrow {
+    font-size: 13px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--purple-700);
+    margin-bottom: 16px; display: block;
+  }
+  .page-hero h1 {
+    font-size: clamp(30px, 4vw, 48px);
+    margin-bottom: 18px; max-width: 600px;
+  }
+  .page-hero .lead {
+    font-size: 17px; color: var(--muted);
+    max-width: 540px; margin-bottom: 28px; line-height: 1.7;
+  }
 
+  /* LinkedIn button */
   .li-follow-btn {
     display: inline-flex; align-items: center; gap: 10px;
     background: var(--li-blue); color: white;
-    padding: 11px 20px; border-radius: 8px;
-    font-weight: 600; font-size: 14px; transition: background 0.15s;
+    padding: 13px 24px; border-radius: 8px;
+    font-weight: 600; font-size: 15px; transition: background 0.15s;
   }
   .li-follow-btn:hover { background: #005f93; text-decoration: none; }
   .li-follow-btn svg { width: 18px; height: 18px; fill: white; flex-shrink: 0; }
 
-  /* HOW TO UPDATE NOTICE */
-  .embed-notice {
-    background: var(--purple-50); border: 1px solid var(--purple-100);
-    border-radius: 10px; padding: 16px 20px; margin-bottom: 32px;
-    font-size: 13px; color: var(--muted); line-height: 1.6;
-  }
-  .embed-notice strong { color: var(--ink); }
-  .embed-notice code { background: var(--purple-100); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12px; }
+  /* RIGHT COLUMN CARDS */
+  .hero-right { display: flex; flex-direction: column; gap: 16px; }
 
-  /* LAYOUT */
-  .blog-layout {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 48px;
-    padding: 56px 0 80px;
-    align-items: start;
-  }
-  @media (max-width: 960px) { .blog-layout { grid-template-columns: 1fr; } .sidebar { display: none; } }
-
-  /* FEATURED VIDEO */
-  .section-label {
-    font-size: 11px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.14em; color: var(--purple-700);
-    margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
-  }
-  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
-  .featured-video { margin-bottom: 40px; }
-  .video-embed-wrap {
-    background: white; border: 1px solid var(--border); border-radius: 14px;
-    overflow: hidden; box-shadow: 0 4px 20px rgba(45,27,78,0.08);
-  }
-  .video-embed-wrap iframe {
-    width: 100%; display: block;
-    min-height: 380px;
-    border: none;
-  }
-  .video-caption {
-    padding: 18px 24px;
-    border-top: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
-  }
-  .video-caption p { font-size: 14px; color: var(--muted); }
-  .video-caption .li-tag {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 13px; font-weight: 600; color: var(--li-blue);
-  }
-  .video-caption .li-tag svg { width: 14px; height: 14px; fill: var(--li-blue); }
-
-  /* POST FEED */
-  .post-feed { display: flex; flex-direction: column; gap: 24px; }
-  .post-label { margin-bottom: 4px; }
-
-  .li-embed-card {
+  /* Profile card */
+  .profile-card {
     background: white; border: 1px solid var(--border);
-    border-radius: 14px; overflow: hidden;
-    box-shadow: 0 2px 12px rgba(45,27,78,0.06);
-    transition: box-shadow 0.2s;
+    border-radius: 14px; padding: 28px 24px; text-align: center;
   }
-  .li-embed-card:hover { box-shadow: 0 6px 24px rgba(45,27,78,0.12); }
-  .li-embed-card iframe {
-    width: 100%; display: block; border: none;
-    /* LinkedIn embeds are 504px wide natively; we scale them */
-  }
-  .li-embed-card .card-footer {
-    padding: 14px 20px; border-top: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  }
-  .card-footer .topic-chip {
-    font-size: 11px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.1em; background: var(--purple-100);
-    color: var(--purple-700); padding: 3px 10px; border-radius: 20px;
-  }
-  .card-footer .open-li {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 13px; font-weight: 600; color: var(--li-blue);
-  }
-  .card-footer .open-li svg { width: 14px; height: 14px; fill: var(--li-blue); }
-  .card-footer .open-li:hover { text-decoration: underline; }
-
-  /* SIDEBAR */
-  .sidebar { display: flex; flex-direction: column; gap: 20px; }
-  .sidebar-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
-  .sidebar-card h3 { font-size: 15px; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
   .about-avatar {
-    width: 72px; height: 72px; border-radius: 50%;
+    width: 80px; height: 80px; border-radius: 50%;
     background: linear-gradient(135deg, var(--purple-500), var(--purple-800));
-    margin: 0 auto 12px; display: flex; align-items: center; justify-content: center;
-    font-family: 'Fraunces', serif; font-size: 26px; color: white; font-weight: 700;
+    margin: 0 auto 14px; display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-size: 28px; color: white; font-weight: 700;
     overflow: hidden;
   }
   .about-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-  .sidebar-card.about { text-align: center; }
-  .sidebar-card.about p { font-size: 13px; color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
-  .li-follow-btn-sm {
+  .profile-card p {
+    font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.65;
+  }
+  .li-follow-btn-full {
     display: flex; align-items: center; justify-content: center; gap: 8px;
     background: var(--li-blue); color: white; width: 100%;
-    padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;
+    padding: 11px; border-radius: 8px; font-weight: 600; font-size: 14px;
+    transition: background 0.15s;
   }
-  .li-follow-btn-sm:hover { background: #005f93; text-decoration: none; }
-  .li-follow-btn-sm svg { width: 15px; height: 15px; fill: white; }
-  .topic-list { list-style: none; }
-  .topic-list li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
-  .topic-list li:last-child { border-bottom: none; }
-  .topic-list a { color: var(--ink); font-weight: 500; }
-  .topic-list a:hover { color: var(--purple-700); text-decoration: none; }
-  .topic-count { font-size: 11px; color: var(--muted); background: var(--purple-50); border-radius: 20px; padding: 2px 8px; }
+  .li-follow-btn-full:hover { background: #005f93; text-decoration: none; }
+  .li-follow-btn-full svg { width: 16px; height: 16px; fill: white; }
+
+  /* Notification card */
+  .notify-card {
+    background: var(--purple-900);
+    border-radius: 14px; padding: 24px;
+  }
+  .notify-card p {
+    font-size: 15px; color: rgba(255,255,255,0.85);
+    margin-bottom: 16px; line-height: 1.65;
+  }
+
+  /* TOPICS STRIP */
+  .topics-strip {
+    padding: 36px 0 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .topics-inner {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .topics-label {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--muted); margin-right: 4px; white-space: nowrap;
+  }
+  .topic-chip {
+    font-size: 13px; font-weight: 600; color: var(--purple-700);
+    background: var(--purple-100); border-radius: 20px;
+    padding: 5px 14px; white-space: nowrap;
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    padding: 72px 0; text-align: center;
+  }
+  .cta-band h2 {
+    font-size: clamp(24px, 3vw, 36px); margin-bottom: 14px; color: var(--ink);
+  }
+  .cta-band p {
+    font-size: 17px; color: var(--muted); max-width: 520px;
+    margin: 0 auto 28px;
+  }
 
   /* FOOTER */
   footer { background: var(--purple-900); color: var(--purple-100); padding: 40px 0 24px; font-size: 14px; }
@@ -224,6 +201,11 @@
   .footer-social a { color: var(--purple-100); margin-left: 18px; font-weight: 500; }
   .footer-social a:hover { color: white; text-decoration: none; }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 28px; padding-top: 20px; text-align: center; opacity: 0.7; font-size: 13px; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .page-hero h1 { max-width: 100%; }
+  }
 </style>
 </head>
 <body>
@@ -249,189 +231,72 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="page-hero">
   <div class="container">
-    <span class="eyebrow">LinkedIn · Posts &amp; Videos</span>
-    <h1>Weekly insights on leadership, teams &amp; dealership performance.</h1>
-    <p class="lead">Every post and video comes straight from Stacy's LinkedIn — follow along to catch each one as it drops and join the conversation.</p>
-    <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="li-follow-btn">
-      <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      Follow Stacy on LinkedIn
-    </a>
-  </div>
-</div>
+    <div class="hero-grid">
 
-<div class="container">
-  <div class="blog-layout">
-    <main>
-
-      <!--
-        HOW TO EMBED LINKEDIN POSTS & VIDEOS
-        ─────────────────────────────────────
-        1. Go to any post on Stacy's LinkedIn profile
-        2. Click the "•••" (More) menu on the post
-        3. Select "Embed this post"
-        4. Copy the iframe src URL — it looks like:
-           https://www.linkedin.com/embed/feed/update/urn:li:share:XXXXXXXXXXX
-           or for videos:
-           https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:XXXXXXXXXXX
-        5. Paste the src into the iframe below, replacing the placeholder URL
-        6. For video posts, use height="570". For text posts, use height="400".
-      -->
-
-      <div class="embed-notice">
-        <strong>How to add a new post each week:</strong><br><br>
-        1. Go to <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" style="color:var(--purple-700);">Stacy's LinkedIn profile</a> and open the post you want to embed.<br>
-        2. Click the <strong>···</strong> (three dots) in the top-right corner of the post.<br>
-        3. Click <strong>"Embed this post"</strong>.<br>
-        4. Copy the URL inside the <code>src="..."</code> part of the code LinkedIn gives you.<br>
-        5. Send that URL to Jeremy — he'll paste it in as the new Featured Video or add it to the Recent Posts list.<br><br>
-        <strong>Video posts</strong> have <code>urn:li:ugcPost:</code> in the URL. <strong>Text posts</strong> have <code>urn:li:share:</code>. Both work the same way.
-      </div>
-
-      <!-- FEATURED VIDEO -->
-      <div class="featured-video">
-        <p class="section-label">Featured Video</p>
-        <div class="video-embed-wrap">
-          <!--
-            Replace the src below with a video post embed URL from LinkedIn.
-            Example: https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:XXXXXXXXXXX
-          -->
-          <iframe
-            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:0000000000000"
-            height="460"
-            allowfullscreen
-            title="Stacy Balzer — Featured LinkedIn Video">
-          </iframe>
-          <div class="video-caption">
-            <p>Latest video from Stacy's LinkedIn — replace the embed URL above with your most recent video post.</p>
-            <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="li-tag">
-              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              Watch on LinkedIn
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- RECENT POSTS -->
-      <p class="section-label post-label">Recent Posts</p>
-      <div class="post-feed">
-
-        <!-- POST 1 — replace src with real LinkedIn post embed URL -->
-        <div class="li-embed-card">
-          <iframe
-            src="https://www.linkedin.com/embed/feed/update/urn:li:share:0000000000001"
-            height="400"
-            allowfullscreen
-            title="LinkedIn post by Stacy Balzer">
-          </iframe>
-          <div class="card-footer">
-            <span class="topic-chip">Leadership</span>
-            <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="open-li">
-              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              View on LinkedIn
-            </a>
-          </div>
-        </div>
-
-        <!-- POST 2 — replace src with real LinkedIn post embed URL -->
-        <div class="li-embed-card">
-          <iframe
-            src="https://www.linkedin.com/embed/feed/update/urn:li:share:0000000000002"
-            height="400"
-            allowfullscreen
-            title="LinkedIn post by Stacy Balzer">
-          </iframe>
-          <div class="card-footer">
-            <span class="topic-chip">Team Communication</span>
-            <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="open-li">
-              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              View on LinkedIn
-            </a>
-          </div>
-        </div>
-
-        <!-- POST 3 — video post example — replace src -->
-        <div class="li-embed-card">
-          <iframe
-            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:0000000000003"
-            height="570"
-            allowfullscreen
-            title="LinkedIn video by Stacy Balzer">
-          </iframe>
-          <div class="card-footer">
-            <span class="topic-chip">Dealership Ops</span>
-            <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="open-li">
-              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              View on LinkedIn
-            </a>
-          </div>
-        </div>
-
-        <!-- POST 4 — replace src with real LinkedIn post embed URL -->
-        <div class="li-embed-card">
-          <iframe
-            src="https://www.linkedin.com/embed/feed/update/urn:li:share:0000000000004"
-            height="400"
-            allowfullscreen
-            title="LinkedIn post by Stacy Balzer">
-          </iframe>
-          <div class="card-footer">
-            <span class="topic-chip">Coaching</span>
-            <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="open-li">
-              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              View on LinkedIn
-            </a>
-          </div>
-        </div>
-
-        <!-- Add more posts by duplicating a card block above and swapping the src URL -->
-
-        <div style="text-align: center; padding: 24px 0;">
-          <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="li-follow-btn">
-            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            See all posts on LinkedIn
-          </a>
-        </div>
-
-      </div>
-    </main>
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-
-      <div class="sidebar-card about">
-        <div class="about-avatar">
-          <img src="assets/LI_headshot.jpg" alt="Stacy Balzer" onerror="this.style.display='none'">SB
-        </div>
-        <p>Stacy Balzer — former Ford Senior Director, executive coach, and dealer consultant. Posts weekly on LinkedIn about leadership, team performance, and dealership operations.</p>
-        <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="li-follow-btn-sm">
-          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          Follow on LinkedIn
-        </a>
-      </div>
-
-      <div class="sidebar-card">
-        <h3>Topics</h3>
-        <ul class="topic-list">
-          <li><a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">Leadership</a><span class="topic-count">Weekly</span></li>
-          <li><a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">Team Communication</a><span class="topic-count">Weekly</span></li>
-          <li><a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">Dealership Ops</a><span class="topic-count">Weekly</span></li>
-          <li><a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">Video MPI</a><span class="topic-count">Weekly</span></li>
-          <li><a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">Coaching</a><span class="topic-count">Weekly</span></li>
-          <li><a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener">Women in Leadership</a><span class="topic-count">Weekly</span></li>
-        </ul>
-      </div>
-
-      <div class="sidebar-card" style="background: var(--purple-900); border-color: var(--purple-800);">
-        <p style="font-size: 14px; color: var(--purple-100); margin-bottom: 14px; line-height: 1.6;">New posts and videos every week. Follow on LinkedIn to get notified the moment they go live.</p>
-        <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="li-follow-btn-sm">
+      <!-- LEFT: Headline + CTA -->
+      <div>
+        <span class="eyebrow">LinkedIn · Posts &amp; Videos</span>
+        <h1>Weekly insights on leadership, teams &amp; dealership performance.</h1>
+        <p class="lead">Every post and video comes straight from Stacy's LinkedIn — follow along to catch each one as it drops and join the conversation.</p>
+        <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="li-follow-btn">
           <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           Follow Stacy on LinkedIn
         </a>
       </div>
 
-    </aside>
+      <!-- RIGHT: Profile card + Notification card -->
+      <div class="hero-right">
+
+        <div class="profile-card">
+          <div class="about-avatar">
+            <img src="assets/LI_headshot.jpg" alt="Stacy Balzer" onerror="this.style.display='none'">SB
+          </div>
+          <p>Stacy Balzer — former Ford Senior Director, executive coach, and dealer consultant. Posts weekly on LinkedIn about leadership, team performance, and dealership operations.</p>
+          <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="li-follow-btn-full">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Follow on LinkedIn
+          </a>
+        </div>
+
+        <div class="notify-card">
+          <p>New posts and videos every week. Follow on LinkedIn to get notified the moment they go live.</p>
+          <a href="https://www.linkedin.com/in/stacybalzer/" target="_blank" rel="noopener" class="li-follow-btn-full">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Follow Stacy on LinkedIn
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPICS STRIP -->
+<div class="topics-strip">
+  <div class="container">
+    <div class="topics-inner">
+      <span class="topics-label">Topics</span>
+      <span class="topic-chip">Leadership</span>
+      <span class="topic-chip">Team Communication</span>
+      <span class="topic-chip">Dealership Ops</span>
+      <span class="topic-chip">Video MPI</span>
+      <span class="topic-chip">Coaching</span>
+      <span class="topic-chip">Women in Leadership</span>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Ready to go deeper?</h2>
+    <p>Book a call with Stacy to talk leadership, team performance, or dealership operations.</p>
+    <a href="https://calendly.com/upliftplusignite/introductory-meeting" target="_blank" rel="noopener" class="li-follow-btn" style="display:inline-flex;">
+      Book a Free Call
+    </a>
   </div>
 </div>
 
